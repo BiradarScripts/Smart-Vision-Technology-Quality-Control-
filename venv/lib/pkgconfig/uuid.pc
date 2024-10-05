@@ -1,0 +1,11 @@
+prefix=/workspaces/Smart-Vision-Technology-Quality-Control-/venv
+exec_prefix=/workspaces/Smart-Vision-Technology-Quality-Control-/venv
+libdir=/workspaces/Smart-Vision-Technology-Quality-Control-/venv/lib
+includedir=/workspaces/Smart-Vision-Technology-Quality-Control-/venv/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.32.1
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid
