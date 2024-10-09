@@ -1,36 +1,57 @@
-'use client'
+'use client'; // Marking the component as a client component
 
-import { useState, useEffect } from 'react'
-import { Upload, Camera, Tag, Apple, Clock, ShoppingCart, Search, Zap } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { CreativeAnalysisPageComponent } from "@/components/creative-analysis-page";
-
+import { useState, useEffect } from 'react';
+import { Upload, Camera, Tag, Apple, Clock, ShoppingCart, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function CreativeHomePageComponent() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
-  const [isFloating, setIsFloating] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isFloating, setIsFloating] = useState(false);
+  const [analysis, setAnalysis] = useState<string | null>(null); // State to store analysis
 
   useEffect(() => {
     const floatInterval = setInterval(() => {
-      setIsFloating((prev) => !prev)
-    }, 1500)
+      setIsFloating((prev) => !prev);
+    }, 1500);
 
-    return () => clearInterval(floatInterval)
-  }, [])
+    return () => clearInterval(floatInterval);
+  }, []);
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
+    const file = event.target.files?.[0];
     if (file) {
-      const reader = new FileReader()
+      const reader = new FileReader();
       reader.onload = (e) => {
-        setSelectedImage(e.target?.result as string)
-      }
-      reader.readAsDataURL(file)
+        setSelectedImage(e.target?.result as string);
+      };
+      reader.readAsDataURL(file);
     }
-  }
+  };
+
+  const analyzeImage = async () => {
+    if (!selectedImage) return; // Ensure an image is selected
+
+    // Prepare the image data to be sent to the backend
+    const base64Image = selectedImage.split(',')[1]; // Extract base64 string
+
+    // Call your API to analyze the image
+    try {
+      const response = await fetch('http://localhost:8080/api/analyze-image', { // Update URL
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ image: base64Image }), // Send only the base64 string
+      });
+
+      const result = await response.json();
+      setAnalysis(result.analysis); // Update the analysis state with the result
+    } catch (error) {
+      console.error("Error analyzing image:", error);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white text-blue-900">
@@ -79,7 +100,7 @@ export function CreativeHomePageComponent() {
           >
             <div className="p-6">
               <div className="mb-4">
-                <Input
+                <input
                   type="file"
                   accept="image/*"
                   onChange={handleImageUpload}
@@ -100,10 +121,19 @@ export function CreativeHomePageComponent() {
                   </div>
                 </label>
               </div>
-              <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold text-lg py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+              <Button 
+                className="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold text-lg py-3 rounded-full transition-all duration-300 transform hover:scale-105"
+                onClick={analyzeImage} // Call the API on button click
+              >
                 <Zap className="mr-2" />
                 Analyze with QualiBot
               </Button>
+              {analysis && (
+                <div className="mt-6 text-blue-800">
+                  <h3 className="text-xl font-bold">Analysis Result:</h3>
+                  <p>{analysis}</p>
+                </div>
+              )}
             </div>
           </motion.div>
           <motion.div
@@ -164,11 +194,11 @@ export function CreativeHomePageComponent() {
         />
       </footer>
     </div>
-  )
+  );
 }
 
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Card 
@@ -177,19 +207,16 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode, titl
       onMouseLeave={() => setIsHovered(false)}
     >
       <CardHeader>
-        <CardTitle className="flex items-center gap-3 text-blue-600">
-          <motion.div
-            animate={{ rotate: isHovered ? 360 : 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            {icon}
-          </motion.div>
-          <span className="text-xl">{title}</span>
+        <CardTitle className="flex items-center">
+          <span className="mr-3">{icon}</span>
+          <span className={`text-xl font-semibold ${isHovered ? "text-yellow-500" : "text-blue-800"}`}>
+            {title}
+          </span>
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-blue-800">{description}</p>
+        <p className="text-blue-600">{description}</p>
       </CardContent>
     </Card>
-  )
+  );
 }

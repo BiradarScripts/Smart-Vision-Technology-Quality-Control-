@@ -9,3 +9,7 @@ langchain-core
 langserve
 fastapi
 google-generativeai
+langserve
+fastapi
+python-multipart
+sse_starlette
