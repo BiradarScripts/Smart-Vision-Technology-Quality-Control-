@@ -12,8 +12,11 @@ export function CreativeAnalysisPageComponent() {
   const [activeTab, setActiveTab] = useState('recognition')
   const [progress, setProgress] = useState(0)
   const [isImageHovered, setIsImageHovered] = useState(false)
+    // take analysis from local storage
+    const analyses = localStorage.getItem('analyses');
 
   useEffect(() => {
+  
     const timer = setTimeout(() => setProgress(100), 1000)
     return () => clearTimeout(timer)
   }, [])

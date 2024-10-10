@@ -4,6 +4,7 @@
   import { Upload, Zap, ShoppingCart } from 'lucide-react';
   import { motion } from 'framer-motion';
   import { Button } from "@/components/ui/button";
+  import { useRouter } from 'next/navigation'
 
   interface FruitAnalysis {
     number: string;
@@ -23,6 +24,8 @@
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [isFloating, setIsFloating] = useState(false);
     const [analyses, setAnalyses] = useState<string>(''); 
+    const router = useRouter()
+    
 
     useEffect(() => {
       const floatInterval = setInterval(() => {
@@ -44,7 +47,12 @@
     };
 
     const analyzeImage = async () => {
-      if (!selectedImage) return;
+     
+      if (!selectedImage)
+        {
+          router.push('/analysis');
+          return;
+        } 
 
       const formData = new FormData();
       const blob = await fetch(selectedImage).then((res) => res.blob());
@@ -66,6 +74,11 @@
         // Parse the analysis result
         const parsedAnalysis = parseAnalysis(analysis);
         setAnalyses(parsedAnalysis); 
+        // store analysis in local storage
+        localStorage.setItem('analysis', parsedAnalysis);
+        // navigate to /analysis
+      
+        router.push('/analysis');
         
       } catch (error) {
         console.error("Error analyzing image:", error);
