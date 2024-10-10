@@ -1,6 +1,6 @@
 'use client'
 
-import { useState,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowLeft, ShoppingCart, Zap } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
@@ -14,45 +14,34 @@ export function CreativeAnalysisPageComponent() {
 
   // Take analyses from local storage
   const storedAnalyses = localStorage.getItem('analysis');
-  console.log(storedAnalyses);
-  
+
   let analyses = [];
-  
+
   if (storedAnalyses) {
-    // Use DOMParser to extract information from the HTML
-    const parser = new DOMParser();
+    // Split the string by '<strong>Item Number:</strong>'
+    const analysisItems = storedAnalyses.split('<strong>Item Number:</strong>').filter(item => item.trim() !== '');
 
-    // Split the stored analyses into separate items
-    const analysisItems = storedAnalyses.split('|').filter(item => item.trim() !== '');
-
-    // Function to get text content based on label
-    const getTextContentByLabel = (label, analysisDoc) => {
-      const strongElements = analysisDoc.querySelectorAll('strong');
-      for (const strong of strongElements) {
-        if (strong.textContent.includes(label)) {
-          return strong.nextSibling?.textContent?.trim() ?? "N/A";
-        }
-      }
-      return "N/A"; // Default value if label is not found
+    // Function to extract content by label
+    const getTextContentByLabel = (label, item) => {
+      const regex = new RegExp(`<strong>${label}</strong>\\s*([^<]+)`, 'i');
+      const match = item.match(regex);
+      return match ? match[1].trim() : "N/A";
     };
 
-    analyses = analysisItems.map(item => {
-      const analysisDoc = parser.parseFromString(item, 'text/html'); // Parse each item
-
-      return {
-        itemNumber: getTextContentByLabel("Item Number:", analysisDoc),
-        name: getTextContentByLabel("Item Name:", analysisDoc),
-        direction: getTextContentByLabel("Direction:", analysisDoc),
-        freshnessIndex: getTextContentByLabel("Freshness Index:", analysisDoc),
-        color: getTextContentByLabel("Visual Color:", analysisDoc),
-        texture: getTextContentByLabel("Surface Texture:", analysisDoc),
-        firmness: getTextContentByLabel("Firmness Level:", analysisDoc),
-        packagingCondition: getTextContentByLabel("Packaging Condition:", analysisDoc),
-        status: getTextContentByLabel("Status:", analysisDoc),
-        estimatedShelfLife: getTextContentByLabel("Estimated Shelf Life:", analysisDoc),
-        recommendation: getTextContentByLabel("Recommendation:", analysisDoc),
-      };
-    });
+    // Map through each item and extract information
+    analyses = analysisItems.map(item => ({
+      itemNumber: getTextContentByLabel('Item Number:', item),
+      name: getTextContentByLabel('Item Name:', item),
+      direction: getTextContentByLabel('Direction:', item),
+      freshnessIndex: getTextContentByLabel('Freshness Index:', item),
+      color: getTextContentByLabel('Visual Color:', item),
+      texture: getTextContentByLabel('Surface Texture:', item),
+      firmness: getTextContentByLabel('Firmness Level:', item),
+      packagingCondition: getTextContentByLabel('Packaging Condition:', item),
+      status: getTextContentByLabel('Status:', item),
+      estimatedShelfLife: getTextContentByLabel('Estimated Shelf Life:', item),
+      recommendation: getTextContentByLabel('Recommendation:', item)
+    }));
   }
 
   useEffect(() => {
@@ -105,8 +94,6 @@ export function CreativeAnalysisPageComponent() {
                 onMouseEnter={() => setIsImageHovered(true)}
                 onMouseLeave={() => setIsImageHovered(false)}
               >
-                {/* Uncomment and adjust if you want to display an image */}
-                {/* <img src={analyses.imageSrc} alt="Uploaded" className="w-full h-64 object-cover" /> */}
                 <motion.div 
                   className="absolute inset-0 bg-blue-600 opacity-0"
                   animate={{ opacity: isImageHovered ? 0.2 : 0 }}
@@ -154,10 +141,10 @@ export function CreativeAnalysisPageComponent() {
                     <TabsContent key={index} value="freshness">
                       <h3 className="text-2xl font-semibold mb-4 text-blue-600">Freshness Assessment for Item {index + 1}</h3>
                       <div className="space-y-4">
-                        <div className="bg-blue-50 p-4 rounded-lg border-2 border-blue-200">
+                        {/* <div className="bg-blue-50 p-4 rounded-lg border-2 border-blue-200">
                           <p className="text-sm text-blue-600">Item Number:</p>
                           <p className="text-lg font-semibold">{analysis.itemNumber}</p>
-                        </div>
+                        </div> */}
                 
                         <div className="bg-blue-50 p-4 rounded-lg border-2 border-blue-200">
                           <p className="text-sm text-blue-600">Item Name:</p>
@@ -178,7 +165,6 @@ export function CreativeAnalysisPageComponent() {
                         <div className="bg-blue-50 p-4 rounded-lg border-2 border-blue-200">
                           <p className="text-sm text-blue-600">Surface Texture:</p>
                           <p className="text-lg font-semibold">{analysis.texture}</p>
-
                         </div>
                         <div className="bg-blue-50 p-4 rounded-lg border-2 border-blue-200">
                           <p className="text-sm text-blue-600">Firmness Level:</p>
