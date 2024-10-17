@@ -1,25 +1,24 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import { ArrowLeft, ShoppingCart, Zap } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useState, useEffect } from 'react';
+import { ArrowLeft, ShoppingCart, Zap } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function CreativeAnalysisPageComponent() {
-  const [activeTab, setActiveTab] = useState('recognition')
-  const [progress, setProgress] = useState(0)
-  const [isImageHovered, setIsImageHovered] = useState(false)
-
-  // Take analyses from local storage
-  const storedAnalyses = localStorage.getItem('analysis');
+  const [activeTab, setActiveTab] = useState('recognition');
+  const [progress, setProgress] = useState(0);
+  const [isImageHovered, setIsImageHovered] = useState(false);
+  const [analysis, setAnalysis] = useState(null); // Updated state variable name
+  const [brandDetails, setBrandDetails] = useState(null);
 
   let analyses = [];
 
-  if (storedAnalyses) {
+  if (analysis) {
     // Split the string by '<strong>Item Number:</strong>'
-    const analysisItems = storedAnalyses.split('<strong>Item Number:</strong>').filter(item => item.trim() !== '');
+    const analysisItems = analysis.split('<strong>Item Number:</strong>').filter(item => item.trim() !== '');
 
     // Function to extract content by label
     const getTextContentByLabel = (label, item) => {
@@ -45,9 +44,17 @@ export function CreativeAnalysisPageComponent() {
   }
 
   useEffect(() => {
-    const timer = setTimeout(() => setProgress(100), 1000)
-    return () => clearTimeout(timer)
-  }, [])
+    if (typeof window !== 'undefined') {
+      const analysisData = localStorage.getItem('analysis');
+      // const brandData = localStorage.getItem('ngrok_analysis');
+
+      setAnalysis(analysisData);
+      // setBrandDetails(brandData);
+
+      const timer = setTimeout(() => setProgress(100), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   if (analyses.length === 0) {
     return <p>Loading analysis data...</p>;
@@ -141,11 +148,6 @@ export function CreativeAnalysisPageComponent() {
                     <TabsContent key={index} value="freshness">
                       <h3 className="text-2xl font-semibold mb-4 text-blue-600">Freshness Assessment for Item {index + 1}</h3>
                       <div className="space-y-4">
-                        {/* <div className="bg-blue-50 p-4 rounded-lg border-2 border-blue-200">
-                          <p className="text-sm text-blue-600">Item Number:</p>
-                          <p className="text-lg font-semibold">{analysis.itemNumber}</p>
-                        </div> */}
-                
                         <div className="bg-blue-50 p-4 rounded-lg border-2 border-blue-200">
                           <p className="text-sm text-blue-600">Item Name:</p>
                           <p className="text-lg font-semibold">{analysis.name}</p>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 // import { Upload, Zap, ShoppingCart, Loader } from 'lucide-react'; // Import Loader icon
-import { Upload, Camera, Tag, Apple, Clock, ShoppingCart, Search, Zap } from 'lucide-react'
+import { Upload, Camera, Tag, Apple, Clock, ShoppingCart, Search, Zap,Loader } from 'lucide-react'
 import { motion,AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
@@ -51,45 +51,103 @@ export function CreativeHomePageComponent() {
   };
 
   // Analyze image function with loader
+
+  // const analyzeImage = async () => {
+  //   if (!selectedImage) {
+  //     router.push('/analysis');
+  //     return;
+  //   }
+
+  //   const formData = new FormData();
+  //   const blob = await fetch(selectedImage).then((res) => res.blob());
+  //   formData.append('file', blob, 'uploaded-image.jpg');
+
+  //   try {
+  //     setLoading(true); // Show loader
+  //     const apiResponse = await fetch('http://localhost:8000/api/analyze-image', {
+  //       method: 'POST',
+  //       body: formData,
+  //     });
+
+  //     if (!apiResponse.ok) {
+  //       throw new Error(`Error analyzing image: ${apiResponse.statusText}`);
+  //     }
+
+  //     const result = await apiResponse.json();
+  //     const analysis = result.analysis;
+
+  //     // Parse the analysis result
+  //     const parsedAnalysis = parseAnalysis(analysis);
+  //     setAnalyses(parsedAnalysis);
+
+  //     // Store analysis in local storage
+  //     localStorage.setItem('analysis', parsedAnalysis);
+  //     // console.log(localStorage.getItem('analyses'))
+  //     // Navigate to /analysis
+  //     router.push('/analysis');
+  //   } catch (error) {
+  //     console.error("Error analyzing image:", error);
+  //   } finally {
+  //     setLoading(false); // Hide loader after response
+  //   }
+  // };
+  //--------------------------------------------------------------------------
   const analyzeImage = async () => {
     if (!selectedImage) {
       router.push('/analysis');
       return;
     }
-
-    const formData = new FormData();
-    const blob = await fetch(selectedImage).then((res) => res.blob());
-    formData.append('file', blob, 'uploaded-image.jpg');
-
     try {
       setLoading(true); // Show loader
+      
+      // Create the formData only once
+      const formData = new FormData();
+      const blob = await fetch(selectedImage).then((res) => res.blob());
+      formData.append('file', blob, 'uploaded-image.jpg');
+      formData.append('key', 'Front packet');
+      formData.append('another_key', 'dsfgs');
+  
+      // First API request to the localhost server
       const apiResponse = await fetch('http://localhost:8000/api/analyze-image', {
         method: 'POST',
         body: formData,
       });
-
+  
       if (!apiResponse.ok) {
         throw new Error(`Error analyzing image: ${apiResponse.statusText}`);
       }
-
+  
       const result = await apiResponse.json();
       const analysis = result.analysis;
-
-      // Parse the analysis result
+  
       const parsedAnalysis = parseAnalysis(analysis);
       setAnalyses(parsedAnalysis);
-
-      // Store analysis in local storage
       localStorage.setItem('analysis', parsedAnalysis);
-      // console.log(localStorage.getItem('analyses'))
-      // Navigate to /analysis
+  
+      // Second API request to the ngrok server
+      const ngrokResponse = await fetch('https://020d-35-197-144-198.ngrok-free.app/ingri', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!ngrokResponse.ok) {
+        throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse.statusText}`);
+      }
+  
+      const ngrokResult = await ngrokResponse.json();
+      const ngrokAnalysis = ngrokResult.analysis;
+      localStorage.setItem('ngrok_analysis', ngrokAnalysis);
+  
+      // Redirect after both requests succeed
       router.push('/analysis');
     } catch (error) {
       console.error("Error analyzing image:", error);
     } finally {
-      setLoading(false); // Hide loader after response
+      setLoading(false); // Hide loader after both responses
     }
   };
+  
+  //--------------------------------------------------------------------------
 
   // Parsing the analysis result
   function parseAnalysis(analysis: string): string {
