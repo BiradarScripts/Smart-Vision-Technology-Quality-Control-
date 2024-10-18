@@ -97,6 +97,7 @@ export function CreativeHomePageComponent() {
       router.push('/analysis');
       return;
     }
+    
     try {
       setLoading(true); // Show loader
       
@@ -106,9 +107,10 @@ export function CreativeHomePageComponent() {
       formData.append('file', blob, 'uploaded-image.jpg');
       formData.append('key', 'Front packet');
       formData.append('another_key', 'dsfgs');
+      formData.append('image', blob);
   
-      // First API request to the localhost server
-      const apiResponse = await fetch('http://localhost:8000/api/analyze-image', {
+      // // First API request to the localhost server
+      const apiResponse = await fetch('http://127.0.0.1:8000/api/analyze-image', {
         method: 'POST',
         body: formData,
       });
@@ -118,39 +120,72 @@ export function CreativeHomePageComponent() {
       }
   
       const result = await apiResponse.json();
-      const analysis = result.analysis;
+      let analysis = result.analysis; // Keep this mutable for adding item count later
   
+      // Parse and set the analysis result
       const parsedAnalysis = parseAnalysis(analysis);
       setAnalyses(parsedAnalysis);
       localStorage.setItem('analysis', parsedAnalysis);
   
-      // Second API request to the ngrok server
-      const ngrokResponse = await fetch('https://020d-35-197-144-198.ngrok-free.app/ingri', {
+      // // Second API request to the ngrok server
+      // const ngrokResponse = await fetch('https://020d-35-197-144-198.ngrok-free.app/ingri', {
+      //   method: 'POST',
+      //   body: formData,
+      // });
+  
+      // if (!ngrokResponse.ok) {
+      //   throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse.statusText}`);
+      // }
+  
+      // const ngrokResult = await ngrokResponse.json();
+      // const ngrokAnalysis = ngrokResult.analysis;
+      // localStorage.setItem('ngrok_analysis', ngrokAnalysis);
+  
+      // Third API request to /itemcount endpoint
+      //  console.log("hello form above");
+      const itemCountResponse = await fetch('https://d38d-34-138-230-41.ngrok-free.app/count-objects', {
         method: 'POST',
         body: formData,
       });
-
-      if (!ngrokResponse.ok) {
-        throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse.statusText}`);
+  
+      if (!itemCountResponse.ok) {
+        throw new Error(`Error fetching item count: ${itemCountResponse.statusText}`);
       }
+     
+      const itemCountResult = await itemCountResponse.json();
+      // console.log("hello form below");
+
+      // console.log(itemCountResult);
+      const itemCount = itemCountResult.total_objects_detected;
+      console.log(itemCount);
+
+      // Update the analysis object with the item count
+      const analysis1 = {
+      
+
+        
+        itemCount, // Adding item count to the analysis object
+      };
   
-      const ngrokResult = await ngrokResponse.json();
-      const ngrokAnalysis = ngrokResult.analysis;
-      localStorage.setItem('ngrok_analysis', ngrokAnalysis);
+      // Save the updated analysis to localStorage
+      localStorage.setItem('updated_analysis', JSON.stringify(analysis1));
+
+      console.log(itemCount);
   
-      // Redirect after both requests succeed
+      // Redirect after all requests succeed
       router.push('/analysis');
+      
     } catch (error) {
       console.error("Error analyzing image:", error);
     } finally {
-      setLoading(false); // Hide loader after both responses
+      setLoading(false); // Hide loader after all responses
     }
   };
   
   //--------------------------------------------------------------------------
-
+  
   // Parsing the analysis result
-  function parseAnalysis(analysis: string): string {
+  function parseAnalysis(analysis) {
     const items = analysis.split('\n').filter(line => line.trim() !== "");
     let formattedResult = '';
     items.forEach(item => {
@@ -162,6 +197,8 @@ export function CreativeHomePageComponent() {
     });
     return formattedResult;
   }
+  
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white text-blue-900">
