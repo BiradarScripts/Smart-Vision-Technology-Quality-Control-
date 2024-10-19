@@ -30,15 +30,6 @@ export function CreativeAnalysisPageComponent() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
 
-  const ngrokAnalysis4Data = {
-    Carbohydrate: '53.0 g',
-    Protein: '6.7 g',
-    'RDA Per Serve Size': '537 kcal', // Adjusted key for clarity
-    'Serve Size': '20 g', // Adjusted key for clarity
-    'Serves in This Pack': '100 g', // Adjusted key for clarity
-    'Total Sugars': '3.4 g',
-  };
-
   const ngrokAnalysis4String = JSON.stringify(ngrokAnalysis4Data);
 
 
@@ -77,22 +68,14 @@ export function CreativeAnalysisPageComponent() {
       const ngrok_analysis4 = localStorage.getItem('ngrok_analysis4');
       const ngrok_analysis_bk_ed = localStorage.getItem('ngrok_analysis_bk_ed');
       const ngrok_analysis_bk_mrp = localStorage.getItem('ngrok_analysis_bk_mrp');
-
-      // localStorage.setItem('selectedImage', e.target?.result as string);
-      //take this image
+      
       const selectedImage = localStorage.getItem('selectedImage');
       setSelectedImage(selectedImage);
-      
-      // Parse ngrok analysis data and store it in the state
       setNgrokAnalysis2(ngrok_analysis2);
       setNgrokAnalysis3(ngrok_analysis3);
       setNgrokAnalysis4(ngrok_analysis4);
-      // setNgrokAnalysis_bk(ngrok_analysis_bk);
       setNgrok_analysis_bk_ed(ngrok_analysis_bk_ed);
       setNgrok_analysis_bk_mrp(ngrok_analysis_bk_mrp);
-
-
-
 
       const updated_analysis = JSON.parse(localStorage.getItem('updated_analysis')) || {}; // Ensure it's parsed
       setAnalysis(analysisData);
@@ -160,7 +143,6 @@ export function CreativeAnalysisPageComponent() {
                     <Zap className="text-yellow-400 w-16 h-16" />
                   </motion.div>
                 )}
-
 
                   {selectedImage && (
                   <img src={selectedImage} alt="Uploaded" className="w-full h-auto rounded-lg" />
@@ -253,25 +235,24 @@ export function CreativeAnalysisPageComponent() {
                           {/* Brand Name Section */}
                           <div className="mb-4">
                             <h3 className="text-lg font-semibold">Brand Name</h3>
-                            <p className="pl-5">{ngrokAnalysis3 || 'N/A'}</p>
+                            <p className="pl-5">{'N/A'}</p>
                           </div>
 
                           {/* Ingredients Section */}
                           <div className="mb-4">
                             <h3 className="text-lg font-semibold">Ingredients</h3>
-                            <p className="pl-5">{ngrokAnalysis || 'N/A'}</p>
+                            <p className="pl-5">{ngrokAnalysis2 || 'N/A'}</p>
                           </div>
 
                           {/* Nutritional Information Section */}
                           <h3 className="text-lg font-semibold">Nutritional Information </h3>
                           <br />
                           <div className="space-y-4">
-                            {/* {Object.entries(ngrokAnalysis4Data).map(([key, value]) => (
+                            {Object.entries(ngrokAnalysis4String).map(([key, value]) => (
                               <p key={key}>
                                 {key}:{value}
                               </p>
-                            ))} */}
-                            {'N/A'}
+                            )) || 'N/A'}
                           </div>
                         </div>
                       </TabsContent>
@@ -283,8 +264,6 @@ export function CreativeAnalysisPageComponent() {
                          <h2 className="text-2xl font-semibold mb-4 text-blue-600">
                             Mrp & Expiry date Detection
                           </h2>
-                        {/* <pre>{JSON.stringify(updated_analysis, null, 2)}</pre>
-                         */}
                          <div className="mb-4">
                             <h3 className="text-lg font-semibold">MRP</h3>
                             <p className="pl-5">{'Rs. '}{ngrok_analysis_bk_mrp || 'N/A'}{'/-'}</p>

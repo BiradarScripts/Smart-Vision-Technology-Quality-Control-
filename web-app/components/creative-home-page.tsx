@@ -87,47 +87,47 @@ export function CreativeHomePageComponent() {
   
 
       // ############################## brand detail Detection ##############################
-      // const ngrokResponse = await fetch('https://608c-34-16-206-237.ngrok-free.app/webhook1', {
-      //   method: 'POST',
-      //   body: formData,
-      // });
+      const ngrokResponse = await fetch('https://e51e-34-16-130-109.ngrok-free.app/webhook1', {
+        method: 'POST',
+        body: formData,
+      });
   
-      // if (!ngrokResponse.ok) {
-      //   throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse.statusText}`);
-      // }
+      if (!ngrokResponse.ok) {
+        throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse.statusText}`);
+      }
   
-      // const ngrokResult = await ngrokResponse.json();
-      // const ngrokAnalysis = ngrokResult.analysis;
-      // console.log(ngrokAnalysis);
-      // localStorage.setItem('ngrok_analysis', ngrokAnalysis);
+      const ngrokResult = await ngrokResponse.json();
+      const ngrokAnalysis = ngrokResult.analysis;
+      console.log(ngrokAnalysis);
+      localStorage.setItem('ngrok_analysis', ngrokAnalysis);
 
-      // const ngrokResponse2 = await fetch('https://d325-34-16-198-79.ngrok-free.app/ingri', {
-      //   method: 'POST',
-      //   body: formData,
-      // });
+      const ngrokResponse2 = await fetch('https://7dda-34-16-130-109.ngrok-free.app/ingri', {
+        method: 'POST',
+        body: formData,
+      });
   
-      // if (!ngrokResponse2.ok) {
-      //   throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse2.statusText}`);
-      // }
+      if (!ngrokResponse2.ok) {
+        throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse2.statusText}`);
+      }
   
-      // const ngrokResult2 = await ngrokResponse2.json();
-      // const ngrokAnalysis2 = ngrokResult2.analysis;
-      // console.log(ngrokAnalysis2);
-      // localStorage.setItem('ngrok_analysis2', ngrokAnalysis2);
+      const ngrokResult2 = await ngrokResponse2.json();
+      const ngrokAnalysis2 = ngrokResult2.analysis;
+      console.log(ngrokAnalysis2);
+      localStorage.setItem('ngrok_analysis2', ngrokAnalysis2);
 
-      // const ngrokResponse4 = await fetch('https://d325-34-16-198-79.ngrok-free.app/nutri', {
-      //   method: 'POST',
-      //   body: formData,
-      // });
+      const ngrokResponse4 = await fetch('https://d325-34-16-198-79.ngrok-free.app/nutri', {
+        method: 'POST',
+        body: formData,
+      });
   
-      // if (!ngrokResponse4.ok) {
-      //   throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse4.statusText}`);
-      // }
+      if (!ngrokResponse4.ok) {
+        throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse4.statusText}`);
+      }
   
-      // const ngrokResult4 = await ngrokResponse4.json();
-      // const ngrokAnalysis4 = ngrokResult4.analysis;
-      // console.log(ngrokAnalysis4);
-      // localStorage.setItem('ngrok_analysis4', ngrokAnalysis4);
+      const ngrokResult4 = await ngrokResponse4.json();
+      const ngrokAnalysis4 = ngrokResult4.analysis;
+      console.log(ngrokAnalysis4);
+      localStorage.setItem('ngrok_analysis4', ngrokAnalysis4);
 
 
       
@@ -135,24 +135,24 @@ export function CreativeHomePageComponent() {
 
 
       // ############################## Item Count Detection ##############################
-      // const itemCountResponse = await fetch('https://d38d-34-138-230-41.ngrok-free.app/count-objects', {
-      //   method: 'POST',
-      //   body: formData,
-      // });
-      // if (!itemCountResponse.ok) {
-      //   throw new Error(`Error fetching item count: ${itemCountResponse.statusText}`);
-      // }
+      const itemCountResponse = await fetch('https://d38d-34-138-230-41.ngrok-free.app/count-objects', {
+        method: 'POST',
+        body: formData,
+      });
+      if (!itemCountResponse.ok) {
+        throw new Error(`Error fetching item count: ${itemCountResponse.statusText}`);
+      }
      
-      // const itemCountResult = await itemCountResponse.json();
-      // const itemCount = itemCountResult.total_objects_detected;
-      // console.log(itemCount);
-      // const analysis1 = {
-      //   itemCount, 
-      // };
+      const itemCountResult = await itemCountResponse.json();
+      const itemCount = itemCountResult.total_objects_detected;
+      console.log(itemCount);
+      const analysis1 = {
+        itemCount, 
+      };
 
-      // localStorage.setItem('updated_analysis', JSON.stringify(analysis1));
+      localStorage.setItem('updated_analysis', JSON.stringify(analysis1));
       //for testing
-      localStorage.setItem('updated_analysis', '1');
+      // localStorage.setItem('updated_analysis', '1');
 
       // ############################## Item Count Detection end##############################
 
@@ -177,7 +177,7 @@ export function CreativeHomePageComponent() {
       console.log(ngrokAnalysis3.MRP);
       localStorage.setItem('ngrok_analysis_bk_ed', ngrokAnalysis3.Expiry_Date);
       localStorage.setItem('ngrok_analysis_bk_mrp', ngrokAnalysis3.MRP);
-      // console.log(localStorage.getitem('ngrok_analysis_bk'));
+      console.log(localStorage.getitem('ngrok_analysis_bk'));
 
       // ############################## mrp detection end##############################
 
