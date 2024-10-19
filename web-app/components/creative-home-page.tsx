@@ -87,7 +87,7 @@ export function CreativeHomePageComponent() {
   
 
       // ############################## brand detail Detection ##############################
-      // const ngrokResponse = await fetch('https://d325-34-16-198-79.ngrok-free.app/webhook1', {
+      // const ngrokResponse = await fetch('https://608c-34-16-206-237.ngrok-free.app/webhook1', {
       //   method: 'POST',
       //   body: formData,
       // });
@@ -162,19 +162,22 @@ export function CreativeHomePageComponent() {
 
       // ############################## mrp detection ##############################
 
-      // const ngrokResponse3 = await fetch('https://c69b-35-240-158-120.ngrok-free.app/webhook/mrpexp', {
-      //   method: 'POST',
-      //   body: formData,
-      // });
+      const ngrokResponse3 = await fetch('https://7043-35-230-119-109.ngrok-free.app/webhook/mrpexp', {
+        method: 'POST',
+        body: formData,
+      });
   
-      // if (!ngrokResponse3.ok) {
-      //   throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse3.statusText}`);
-      // }
+      if (!ngrokResponse3.ok) {
+        throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse3.statusText}`);
+      }
   
-      // const ngrokResult3 = await ngrokResponse3.json();
-      // const ngrokAnalysis3 = ngrokResult3.analysis;
-      // console.log(ngrokAnalysis3);
-      // localStorage.setItem('ngrok_analysis3', ngrokAnalysis3);
+      const ngrokResult3 = await ngrokResponse3.json();
+      const ngrokAnalysis3 = ngrokResult3.analysis;
+      console.log(ngrokAnalysis3.Expiry_Date);
+      console.log(ngrokAnalysis3.MRP);
+      localStorage.setItem('ngrok_analysis_bk_ed', ngrokAnalysis3.Expiry_Date);
+      localStorage.setItem('ngrok_analysis_bk_mrp', ngrokAnalysis3.MRP);
+      // console.log(localStorage.getitem('ngrok_analysis_bk'));
 
       // ############################## mrp detection end##############################
 

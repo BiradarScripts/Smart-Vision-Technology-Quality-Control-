@@ -22,6 +22,10 @@ export function CreativeAnalysisPageComponent() {
   const [ngrokAnalysis2, setNgrokAnalysis2] = useState(null);
   const [ngrokAnalysis3, setNgrokAnalysis3] = useState(null);
   const [ngrokAnalysis4, setNgrokAnalysis4] = useState(null);
+  const [ngrok_analysis_bk_ed, setNgrok_analysis_bk_ed] = useState(null);
+  const [ngrok_analysis_bk_mrp, setNgrok_analysis_bk_mrp] = useState(null);
+
+
   //image state
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -71,6 +75,8 @@ export function CreativeAnalysisPageComponent() {
       const ngrok_analysis2 = localStorage.getItem('ngrok_analysis2');
       const ngrok_analysis3 = localStorage.getItem('ngrok_analysis');
       const ngrok_analysis4 = localStorage.getItem('ngrok_analysis4');
+      const ngrok_analysis_bk_ed = localStorage.getItem('ngrok_analysis_bk_ed');
+      const ngrok_analysis_bk_mrp = localStorage.getItem('ngrok_analysis_bk_mrp');
 
       // localStorage.setItem('selectedImage', e.target?.result as string);
       //take this image
@@ -81,6 +87,10 @@ export function CreativeAnalysisPageComponent() {
       setNgrokAnalysis2(ngrok_analysis2);
       setNgrokAnalysis3(ngrok_analysis3);
       setNgrokAnalysis4(ngrok_analysis4);
+      // setNgrokAnalysis_bk(ngrok_analysis_bk);
+      setNgrok_analysis_bk_ed(ngrok_analysis_bk_ed);
+      setNgrok_analysis_bk_mrp(ngrok_analysis_bk_mrp);
+
 
 
 
@@ -194,7 +204,7 @@ export function CreativeAnalysisPageComponent() {
                             <li className="text-lg">
                               <div className="mb-4">
                               <h3 className="text-lg font-semibold">Number of items</h3>
-                              <p className="pl-5">{updated_analysis.itemCount || 1}</p>
+                              <p className="pl-5">{updated_analysis.itemCount || 'N/A'}</p>
                           </div>
                             </li>
                           </ul>
@@ -243,7 +253,7 @@ export function CreativeAnalysisPageComponent() {
                           {/* Brand Name Section */}
                           <div className="mb-4">
                             <h3 className="text-lg font-semibold">Brand Name</h3>
-                            <p className="pl-5">{ngrokAnalysis2 || 'N/A'}</p>
+                            <p className="pl-5">{ngrokAnalysis3 || 'N/A'}</p>
                           </div>
 
                           {/* Ingredients Section */}
@@ -256,11 +266,12 @@ export function CreativeAnalysisPageComponent() {
                           <h3 className="text-lg font-semibold">Nutritional Information </h3>
                           <br />
                           <div className="space-y-4">
-                            {Object.entries(ngrokAnalysis4Data).map(([key, value]) => (
+                            {/* {Object.entries(ngrokAnalysis4Data).map(([key, value]) => (
                               <p key={key}>
                                 {key}:{value}
                               </p>
-                            ))}
+                            ))} */}
+                            {'N/A'}
                           </div>
                         </div>
                       </TabsContent>
@@ -276,12 +287,12 @@ export function CreativeAnalysisPageComponent() {
                          */}
                          <div className="mb-4">
                             <h3 className="text-lg font-semibold">MRP</h3>
-                            <p className="pl-5">{ngrokAnalysis3 || 'N/A'}</p>
+                            <p className="pl-5">{'Rs. '}{ngrok_analysis_bk_mrp || 'N/A'}{'/-'}</p>
                           </div>
 
                           <div className="mb-4">
                             <h3 className="text-lg font-semibold">Expiry Date</h3>
-                            <p className="pl-5">{ngrokAnalysis3 || 'N/A'}</p>
+                            <p className="pl-5">{ngrok_analysis_bk_ed || 'N/A'}</p>
                           </div>
                       </TabsContent>
                     )}
