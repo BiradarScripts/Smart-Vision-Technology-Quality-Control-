@@ -1,0 +1,15 @@
+langchain
+ipykernel
+python-dotenv 
+langchain_community
+langchain-text-splitters
+langchain_google_genai
+streamlit
+langchain-core
+langserve
+fastapi
+google-generativeai
+langserve
+fastapi
+python-multipart
+sse_starlette 
