@@ -90,50 +90,8 @@ To get started with the project, follow these steps:
 5. **Open your browser** and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## Project Structure
-Smart-Vision-Technology-Quality-Control-/
-├── backend/
-│   ├── app.py                          # Main backend application file
-│   ├── requirements.txt                 # Python dependencies for the backend
-│   ├── MRP_EXP_T2.ipynb                 # Jupyter notebook for MRP and expiry detection
-│   ├── ocr.py                           # OCR processing script
-│   ├── nutri.py                         # Nutritional information extraction script
-│   ├── freshness_detection.py            # Script for freshness detection
-│   ├── item_count_detection.py           # Script for item counting
-│   └── ...                               # Other backend scripts and modules
-├── web-app/
-│   ├── components/                       # Reusable React components
-│   │   ├── creative-home-page.tsx       # Home page component
-│   │   ├── creative-analysis-page.tsx    # Analysis results page component
-│   │   ├── FeatureCard.tsx              # Component for displaying feature cards
-│   │   ├── Header.tsx                    # Header component for navigation
-│   │   ├── Footer.tsx                    # Footer component
-│   │   └── ...                           # Other UI components
-│   ├── pages/                            # Next.js pages
-│   │   ├── index.tsx                    # Home page
-│   │   ├── analysis.tsx                 # Analysis results page
-│   │   └── ...                           # Other pages
-│   ├── public/                           # Static assets (images, fonts, etc.)
-│   ├── styles/                           # CSS styles
-│   ├── .gitignore                        # Git ignore file
-│   ├── package.json                      # Frontend dependencies and scripts
-│   └── README.md                         # Frontend README file
-├── Brand_Detail_Detection/               # Directory for brand detail detection
-│   ├── ocr.ipynb                         # Jupyter notebook for OCR processing
-│   ├── ocr_model.py                      # Model for OCR processing
-│   └── ...                               # Other related files
-├── Freshness_Detection/                  # Directory for freshness detection
-│   ├── app2.py                           # FastAPI application for freshness detection
-│   ├── requirements.txt                  # Python dependencies for freshness detection
-│   └── freshness_model.py                # Model for freshness detection
-├── Item_Count_Detection/                 # Directory for item counting
-│   ├── YOLO.ipynb                        # Jupyter notebook for YOLO object detection
-│   ├── yolo_model.py                     # Model for item counting
-│   └── ...                               # Other related files
-├── Mrp_Expiry_Detection/                 # Directory for MRP and expiry detection
-│   ├── MRP_EXP_T2.ipynb                  # Jupyter notebook for MRP and expiry detection
-│   ├── mrp_expiry_model.py               # Model for MRP and expiry detection
-│   └── ...                               # Other related files
-└── README.md                             # Main project README file
+![image](https://github.com/user-attachments/assets/502b1c9f-fda2-4a4d-99a5-7d847c0dc4fa)
+
 
 
 ### Directory Descriptions
