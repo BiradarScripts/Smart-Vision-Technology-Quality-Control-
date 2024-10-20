@@ -49,6 +49,7 @@ Estimated Shelf Life: "Estimated shelf life based on freshness assessment"
  Recommendation: "Practical recommendation like 'ready to eat,' 'consume soon,' 'best for baking,' or 'not suitable for consumption'"
 
 If there are multiple eatables in the image, list each item separately using the above format.also remember do not use any other formate like for the response,strictly adhere to the the one mentioned above else the world might collapse,do not use any characters like '\' or '*'
+also very important if the image uploaded is not a eatable item or product, then please mention that the the analysis of the respective field mentioned above is not possible dont leave any field empty.
 '''
 
 

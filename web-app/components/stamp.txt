@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import NgrokAnalysis4 from './NgrokAnalysis4'; // Adjust the path as needed
 
 export function CreativeAnalysisPageComponent() {
   const [activeTab, setActiveTab] = useState('recognition');
@@ -18,20 +17,9 @@ export function CreativeAnalysisPageComponent() {
   const [brandDetails, setBrandDetails] = useState(null);
   
   // State for ngrok analysis data
-  const [ngrokAnalysis, setNgrokAnalysis] = useState(null);
   const [ngrokAnalysis2, setNgrokAnalysis2] = useState(null);
   const [ngrokAnalysis3, setNgrokAnalysis3] = useState(null);
   const [ngrokAnalysis4, setNgrokAnalysis4] = useState(null);
-  const [ngrok_analysis_bk_ed, setNgrok_analysis_bk_ed] = useState(null);
-  const [ngrok_analysis_bk_mrp, setNgrok_analysis_bk_mrp] = useState(null);
-
-
-  //image state
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-
-  const ngrokAnalysis4String = JSON.stringify(ngrokAnalysis4Data);
-
 
   let analyses = [];
 
@@ -62,20 +50,14 @@ export function CreativeAnalysisPageComponent() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const analysisData = localStorage.getItem('analysis');
-      const ngrok_analysis = localStorage.getItem('ngrok_analysis');
       const ngrok_analysis2 = localStorage.getItem('ngrok_analysis2');
       const ngrok_analysis3 = localStorage.getItem('ngrok_analysis');
       const ngrok_analysis4 = localStorage.getItem('ngrok_analysis4');
-      const ngrok_analysis_bk_ed = localStorage.getItem('ngrok_analysis_bk_ed');
-      const ngrok_analysis_bk_mrp = localStorage.getItem('ngrok_analysis_bk_mrp');
-      
-      const selectedImage = localStorage.getItem('selectedImage');
-      setSelectedImage(selectedImage);
+
+      // Parse ngrok analysis data and store it in the state
       setNgrokAnalysis2(ngrok_analysis2);
       setNgrokAnalysis3(ngrok_analysis3);
       setNgrokAnalysis4(ngrok_analysis4);
-      setNgrok_analysis_bk_ed(ngrok_analysis_bk_ed);
-      setNgrok_analysis_bk_mrp(ngrok_analysis_bk_mrp);
 
       const updated_analysis = JSON.parse(localStorage.getItem('updated_analysis')) || {}; // Ensure it's parsed
       setAnalysis(analysisData);
@@ -143,10 +125,6 @@ export function CreativeAnalysisPageComponent() {
                     <Zap className="text-yellow-400 w-16 h-16" />
                   </motion.div>
                 )}
-
-                  {selectedImage && (
-                  <img src={selectedImage} alt="Uploaded" className="w-full h-auto rounded-lg" />
-                )}
               </div>
             </CardContent>
           </Card>
@@ -161,8 +139,8 @@ export function CreativeAnalysisPageComponent() {
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-4 bg-blue-50">
               <TabsTrigger value="recognition" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Recognition</TabsTrigger>
-              <TabsTrigger value="label" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Details</TabsTrigger>
-              <TabsTrigger value="details" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Label</TabsTrigger>
+              <TabsTrigger value="label" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Label</TabsTrigger>
+              <TabsTrigger value="details" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Details</TabsTrigger>
               <TabsTrigger value="freshness" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">Freshness</TabsTrigger>
             </TabsList>
             <div className="p-6">
@@ -179,15 +157,10 @@ export function CreativeAnalysisPageComponent() {
                     {activeTab === "recognition" && (
                       <TabsContent key={`recognition`} value="recognition">
                         <div>
-                        <h2 className="text-2xl font-semibold mb-4 text-blue-600">
-                            Recognigition Analysis
-                          </h2>
+                          <h2 className="text-xl font-semibold">Recognized Items</h2>
                           <ul>
                             <li className="text-lg">
-                              <div className="mb-4">
-                              <h3 className="text-lg font-semibold">Number of items</h3>
-                              <p className="pl-5">{updated_analysis.itemCount || 'N/A'}</p>
-                          </div>
+                              Number of items: {updated_analysis.itemCount || 0} items {/* Fallback to 0 */}
                             </li>
                           </ul>
                         </div>
@@ -224,57 +197,65 @@ export function CreativeAnalysisPageComponent() {
                         ))}
                       </TabsContent>
                     )}
-                    
-                    {activeTab === "label" && (
+
+                    {/* TabsContent for "label" */}
+                    {/* {activeTab === "label" && (
                       <TabsContent key={`label`} value="label">
-                        <div className="p-6 bg-white shadow-md rounded-md max-w-2xl mx-auto">
-                        <h2 className="text-2xl font-semibold mb-4 text-blue-600">
-                            Brand Detail Extraction
-                          </h2>
-
-                          {/* Brand Name Section */}
-                          <div className="mb-4">
-                            <h3 className="text-lg font-semibold">Brand Name</h3>
-                            <p className="pl-5">{'N/A'}</p>
-                          </div>
-
-                          {/* Ingredients Section */}
-                          <div className="mb-4">
-                            <h3 className="text-lg font-semibold">Ingredients</h3>
-                            <p className="pl-5">{ngrokAnalysis2 || 'N/A'}</p>
-                          </div>
-
-                          {/* Nutritional Information Section */}
-                          <h3 className="text-lg font-semibold">Nutritional Information </h3>
-                          <br />
-                          <div className="space-y-4">
-                            {Object.entries(ngrokAnalysis4String).map(([key, value]) => (
-                              <p key={key}>
-                                {key}:{value}
-                              </p>
-                            )) || 'N/A'}
-                          </div>
+                        <div>
+                          <h2 className="text-xl font-semibold">ngrok Analysis Data</h2>
+                          <ul>
+                            <li>ngrok_analysis2: {ngrokAnalysis2 || 'N/A'}</li>
+                            <li>ngrok_analysis3: {ngrokAnalysis3 || 'N/A'}</li>
+                            <li>ngrok_analysis4: {ngrokAnalysis4 || 'N/A'}</li>
+                          </ul>
                         </div>
                       </TabsContent>
-                    )}
+                    )} */}
+                    {activeTab === "label" && (
+  <TabsContent key={`label`} value="label">
+    <div>
+      <h2 className="text-xl font-semibold">ngrok Analysis Data</h2>
+      <ul>
+        {/* ngrokAnalysis2 is a string */}
+        <li><strong>ngrok_analysis2:</strong> {ngrokAnalysis3 || 'N/A'}</li>
 
-                    {/* TabsContent for "details" */}
-                    {activeTab === "details" && (
-                      <TabsContent key={`details`} value="details">
-                         <h2 className="text-2xl font-semibold mb-4 text-blue-600">
-                            Mrp & Expiry date Detection
-                          </h2>
-                         <div className="mb-4">
-                            <h3 className="text-lg font-semibold">MRP</h3>
-                            <p className="pl-5">{'Rs. '}{ngrok_analysis_bk_mrp || 'N/A'}{'/-'}</p>
-                          </div>
+        {/* ngrokAnalysis3 is a dictionary */}
+        {/* <li>
+          <strong>ngrok_analysis3:</strong>
+          {ngrokAnalysis3 ? (
+            <ul>
+              {Object.entries(ngrokAnalysis3).map(([key, value]) => (
+                <li key={key}>
+                  <strong>{key}: </strong> {JSON.stringify(value)}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            'N/A'
+          )}
+        </li> */}
 
-                          <div className="mb-4">
-                            <h3 className="text-lg font-semibold">Expiry Date</h3>
-                            <p className="pl-5">{ngrok_analysis_bk_ed || 'N/A'}</p>
-                          </div>
-                      </TabsContent>
-                    )}
+        {/* ngrokAnalysis4 is a list */}
+        {/* <li>
+  <strong>ngrok_analysis4:</strong>
+  {ngrokAnalysis4 && typeof ngrokAnalysis4 === 'object' && !Array.isArray(ngrokAnalysis4) ? (
+    <ul>
+      {Object.entries(ngrokAnalysis4).map(([key, value], index) => (
+        <li key={index}>
+          <strong>{key}:</strong> {value}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    'N/A or Invalid Data Format'
+  )}
+</li> */}
+
+
+      </ul>
+    </div>
+  </TabsContent>
+)}
 
                   </>
                 </motion.div>
@@ -286,3 +267,53 @@ export function CreativeAnalysisPageComponent() {
     </div>
   );
 }
+
+
+
+
+
+
+(
+  <TabsContent key={`label`} value="label">
+    <div>
+      <h2 className="text-xl font-semibold">ngrok Analysis Data</h2>
+      <ul>
+        {/* ngrokAnalysis2 is a string */}
+        {/* <li><strong>ngrok_analysis2:</strong> {ngrokAnalysis3 || 'N/A'}</li> */}
+
+        {/* ngrokAnalysis3 is a dictionary */}
+        {/* <li>
+          <strong>ngrok_analysis3:</strong>
+          {ngrokAnalysis3 ? (
+            <ul>
+              {Object.entries(ngrokAnalysis3).map(([key, value]) => (
+                <li key={key}>
+                  <strong>{key}: </strong> {JSON.stringify(value)}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            'N/A'
+          )}
+        </li> */}
+
+        {/* ngrokAnalysis4 is a list */}
+        {/* <li>
+  <strong>ngrok_analysis4:</strong>
+  {ngrokAnalysis4 && typeof ngrokAnalysis4 === 'object' && !Array.isArray(ngrokAnalysis4) ? (
+    <ul>
+      {Object.entries(ngrokAnalysis4).map(([key, value], index) => (
+        <li key={index}>
+          <strong>{key}:</strong> {value}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    'N/A or Invalid Data Format'
+  )}
+</li> */}
+
+
+      </ul>
+    </div>
+  </TabsContent>

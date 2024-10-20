@@ -39,118 +39,163 @@ export function CreativeHomePageComponent() {
   }, []);
 
   // Handle image file selection
+
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
         setSelectedImage(e.target?.result as string);
+        //store it in local storage aswell
+        localStorage.setItem('selectedImage', e.target?.result as string);
       };
       reader.readAsDataURL(file);
     }
   };
 
-  // Analyze image function with loader
-
-  // const analyzeImage = async () => {
-  //   if (!selectedImage) {
-  //     router.push('/analysis');
-  //     return;
-  //   }
-
-  //   const formData = new FormData();
-  //   const blob = await fetch(selectedImage).then((res) => res.blob());
-  //   formData.append('file', blob, 'uploaded-image.jpg');
-
-  //   try {
-  //     setLoading(true); // Show loader
-  //     const apiResponse = await fetch('http://localhost:8000/api/analyze-image', {
-  //       method: 'POST',
-  //       body: formData,
-  //     });
-
-  //     if (!apiResponse.ok) {
-  //       throw new Error(`Error analyzing image: ${apiResponse.statusText}`);
-  //     }
-
-  //     const result = await apiResponse.json();
-  //     const analysis = result.analysis;
-
-  //     // Parse the analysis result
-  //     const parsedAnalysis = parseAnalysis(analysis);
-  //     setAnalyses(parsedAnalysis);
-
-  //     // Store analysis in local storage
-  //     localStorage.setItem('analysis', parsedAnalysis);
-  //     // console.log(localStorage.getItem('analyses'))
-  //     // Navigate to /analysis
-  //     router.push('/analysis');
-  //   } catch (error) {
-  //     console.error("Error analyzing image:", error);
-  //   } finally {
-  //     setLoading(false); // Hide loader after response
-  //   }
-  // };
   //--------------------------------------------------------------------------
   const analyzeImage = async () => {
     if (!selectedImage) {
       router.push('/analysis');
       return;
     }
+    
     try {
       setLoading(true); // Show loader
       
-      // Create the formData only once
+      // ############################## Freshness Detection ##############################
       const formData = new FormData();
       const blob = await fetch(selectedImage).then((res) => res.blob());
       formData.append('file', blob, 'uploaded-image.jpg');
       formData.append('key', 'Front packet');
       formData.append('another_key', 'dsfgs');
+      formData.append('image', blob);
   
-      // First API request to the localhost server
-      const apiResponse = await fetch('http://localhost:8000/api/analyze-image', {
+      const apiResponse = await fetch('http://127.0.0.1:8000/api/analyze-image', {
         method: 'POST',
         body: formData,
       });
-  
       if (!apiResponse.ok) {
         throw new Error(`Error analyzing image: ${apiResponse.statusText}`);
       }
-  
       const result = await apiResponse.json();
-      const analysis = result.analysis;
-  
+      let analysis = result.analysis; 
       const parsedAnalysis = parseAnalysis(analysis);
       setAnalyses(parsedAnalysis);
       localStorage.setItem('analysis', parsedAnalysis);
+      // ############################## Freshness Detection end##############################
   
-      // Second API request to the ngrok server
-      const ngrokResponse = await fetch('https://020d-35-197-144-198.ngrok-free.app/ingri', {
+
+      // ############################## brand detail Detection ##############################
+      const ngrokResponse = await fetch('https://e51e-34-16-130-109.ngrok-free.app/webhook1', {
         method: 'POST',
         body: formData,
       });
-
+  
       if (!ngrokResponse.ok) {
         throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse.statusText}`);
       }
   
       const ngrokResult = await ngrokResponse.json();
       const ngrokAnalysis = ngrokResult.analysis;
+      console.log(ngrokAnalysis);
       localStorage.setItem('ngrok_analysis', ngrokAnalysis);
+
+      const ngrokResponse2 = await fetch('https://7dda-34-16-130-109.ngrok-free.app/ingri', {
+        method: 'POST',
+        body: formData,
+      });
   
-      // Redirect after both requests succeed
+      if (!ngrokResponse2.ok) {
+        throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse2.statusText}`);
+      }
+  
+      const ngrokResult2 = await ngrokResponse2.json();
+      const ngrokAnalysis2 = ngrokResult2.analysis;
+      console.log(ngrokAnalysis2);
+      localStorage.setItem('ngrok_analysis2', ngrokAnalysis2);
+
+      const ngrokResponse4 = await fetch('https://d325-34-16-198-79.ngrok-free.app/nutri', {
+        method: 'POST',
+        body: formData,
+      });
+  
+      if (!ngrokResponse4.ok) {
+        throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse4.statusText}`);
+      }
+  
+      const ngrokResult4 = await ngrokResponse4.json();
+      const ngrokAnalysis4 = ngrokResult4.analysis;
+      console.log(ngrokAnalysis4);
+      localStorage.setItem('ngrok_analysis4', ngrokAnalysis4);
+
+
+      
+      // ############################## brand detail Detection end##############################
+
+
+      // ############################## Item Count Detection ##############################
+      const itemCountResponse = await fetch('https://d38d-34-138-230-41.ngrok-free.app/count-objects', {
+        method: 'POST',
+        body: formData,
+      });
+      if (!itemCountResponse.ok) {
+        throw new Error(`Error fetching item count: ${itemCountResponse.statusText}`);
+      }
+     
+      const itemCountResult = await itemCountResponse.json();
+      const itemCount = itemCountResult.total_objects_detected;
+      console.log(itemCount);
+      const analysis1 = {
+        itemCount, 
+      };
+
+      localStorage.setItem('updated_analysis', JSON.stringify(analysis1));
+      //for testing
+      // localStorage.setItem('updated_analysis', '1');
+
+      // ############################## Item Count Detection end##############################
+
+      
+
+
+
+      // ############################## mrp detection ##############################
+
+      const ngrokResponse3 = await fetch('https://7043-35-230-119-109.ngrok-free.app/webhook/mrpexp', {
+        method: 'POST',
+        body: formData,
+      });
+  
+      if (!ngrokResponse3.ok) {
+        throw new Error(`Error analyzing image on ngrok server: ${ngrokResponse3.statusText}`);
+      }
+  
+      const ngrokResult3 = await ngrokResponse3.json();
+      const ngrokAnalysis3 = ngrokResult3.analysis;
+      console.log(ngrokAnalysis3.Expiry_Date);
+      console.log(ngrokAnalysis3.MRP);
+      localStorage.setItem('ngrok_analysis_bk_ed', ngrokAnalysis3.Expiry_Date);
+      localStorage.setItem('ngrok_analysis_bk_mrp', ngrokAnalysis3.MRP);
+      console.log(localStorage.getitem('ngrok_analysis_bk'));
+
+      // ############################## mrp detection end##############################
+
+  
+      // Redirect after all requests succeed
       router.push('/analysis');
+      
     } catch (error) {
       console.error("Error analyzing image:", error);
     } finally {
-      setLoading(false); // Hide loader after both responses
+      setLoading(false);
     }
   };
   
   //--------------------------------------------------------------------------
-
+  
   // Parsing the analysis result
-  function parseAnalysis(analysis: string): string {
+  function parseAnalysis(analysis) {
     const items = analysis.split('\n').filter(line => line.trim() !== "");
     let formattedResult = '';
     items.forEach(item => {
@@ -162,6 +207,8 @@ export function CreativeHomePageComponent() {
     });
     return formattedResult;
   }
+  
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white text-blue-900">
