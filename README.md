@@ -5,13 +5,13 @@ Welcome to the **Smart Vision Technology Quality Control** project! This reposit
 ## Table of Contents
 
 - [Features](#features)
+- [UI Design](#ui-design)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [System Design](#system-design)
-- [UI Design](#ui-design)
 - [Contributing](#contributing)
 - [Acknowledgments](#acknowledgments)
 
@@ -22,6 +22,16 @@ Welcome to the **Smart Vision Technology Quality Control** project! This reposit
 - **Freshness Detection**: Assess the freshness of food items based on visual cues.
 - **MRP and Expiry Detection**: Identify the Maximum Retail Price (MRP) and expiry dates from product packaging.
 - **User-Friendly Interface**: Built with Next.js and Tailwind CSS for a responsive and modern UI.
+
+## UI Design
+
+The UI is designed to be intuitive and user-friendly, featuring:
+
+- **Home Page**: A welcoming interface for users to upload images.
+![image](https://github.com/user-attachments/assets/04ceada4-bbf2-4c0d-90e8-2ed328b8d72a)
+
+- **Analysis Page**: Displays the results of the image analysis, including detected text, freshness status, and other relevant information.
+![image](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
 
 ## Technologies Used
 
@@ -146,15 +156,7 @@ The system is designed to handle image uploads, process them through various mac
 ![image](https://github.com/user-attachments/assets/f257d828-796c-4ab7-8ef4-997cf8f0bc0b)
 
 
-## UI Design
 
-The UI is designed to be intuitive and user-friendly, featuring:
-
-- **Home Page**: A welcoming interface for users to upload images.
-![image](https://github.com/user-attachments/assets/04ceada4-bbf2-4c0d-90e8-2ed328b8d72a)
-
-- **Analysis Page**: Displays the results of the image analysis, including detected text, freshness status, and other relevant information.
-![image](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
 
 
 ## Acknowledgments
