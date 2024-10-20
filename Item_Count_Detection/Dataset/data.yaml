@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 17
+names: ['Alcohol', 'Candy', 'Canned Food', 'Chocolate', 'Dessert', 'Dried Food', 'Dried Fruit', 'Drink', 'Gum', 'Instant Drink', 'Instant Noodles', 'Milk', 'Personal Hygiene', 'Puffed Food', 'Seasoner', 'Stationery', 'Tissue']
+
+roboflow:
+  workspace: samrat-sahoo
+  project: groceries-6pfog
+  version: 7
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/samrat-sahoo/groceries-6pfog/dataset/7
