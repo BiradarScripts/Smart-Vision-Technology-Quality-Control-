@@ -5,14 +5,13 @@ Welcome to the **Smart Vision Technology Quality Control** project! This reposit
 ## Table of Contents
 
 - [Features](#features)
+- [UI Design](#ui-design)
+- [System Design](#system-design)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [System Design](#system-design)
-- [UI Design](#ui-design)
-- [Contributing](#contributing)
 - [Acknowledgments](#acknowledgments)
 
 ## Features
@@ -22,6 +21,27 @@ Welcome to the **Smart Vision Technology Quality Control** project! This reposit
 - **Freshness Detection**: Assess the freshness of food items based on visual cues.
 - **MRP and Expiry Detection**: Identify the Maximum Retail Price (MRP) and expiry dates from product packaging.
 - **User-Friendly Interface**: Built with Next.js and Tailwind CSS for a responsive and modern UI.
+
+## UI Design
+
+The UI is designed to be intuitive and user-friendly, featuring:
+
+- **Home Page**: A welcoming interface for users to upload images.
+![image](https://github.com/user-attachments/assets/04ceada4-bbf2-4c0d-90e8-2ed328b8d72a)
+
+- **Analysis Page**: Displays the results of the image analysis, including detected text, freshness status, and other relevant information.
+![image](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
+
+
+## System Design
+
+The system is designed to handle image uploads, process them through various machine learning models, and return analysis results. The architecture consists of:
+
+- **Frontend**: Built with Next.js, it provides a user interface for uploading images and displaying results.
+- **Backend**: A Flask/FastAPI server that handles image processing requests and communicates with machine learning models.
+- **Machine Learning Models**: Various models for OCR, freshness detection, MRP and expiry detection, and item counting.
+
+![image](https://github.com/user-attachments/assets/f257d828-796c-4ab7-8ef4-997cf8f0bc0b)
 
 ## Technologies Used
 
@@ -133,40 +153,10 @@ To get started with the project, follow these steps:
     }
     ```
 
-## System Design
-
-The system is designed to handle image uploads, process them through various machine learning models, and return analysis results. The architecture consists of:
-
-- **Frontend**: Built with Next.js, it provides a user interface for uploading images and displaying results.
-- **Backend**: A Flask/FastAPI server that handles image processing requests and communicates with machine learning models.
-- **Machine Learning Models**: Various models for OCR, freshness detection, MRP and expiry detection, and item counting.
-
-### Architecture Diagram
-
-![image](https://github.com/user-attachments/assets/f257d828-796c-4ab7-8ef4-997cf8f0bc0b)
-
-
-## UI Design
-
-The UI is designed to be intuitive and user-friendly, featuring:
-
-- **Home Page**: A welcoming interface for users to upload images.
-![image](https://github.com/user-attachments/assets/04ceada4-bbf2-4c0d-90e8-2ed328b8d72a)
-
-- **Analysis Page**: Displays the results of the image analysis, including detected text, freshness status, and other relevant information.
-![image](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
 
 
 
-## Contributing
 
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Make your changes and commit them (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a pull request.
 
 
 
