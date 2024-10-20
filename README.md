@@ -6,13 +6,12 @@ Welcome to the **Smart Vision Technology Quality Control** project! This reposit
 
 - [Features](#features)
 - [UI Design](#ui-design)
+- [System Design](#system-design)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [System Design](#system-design)
-- [Contributing](#contributing)
 - [Acknowledgments](#acknowledgments)
 
 ## Features
@@ -32,6 +31,11 @@ The UI is designed to be intuitive and user-friendly, featuring:
 
 - **Analysis Page**: Displays the results of the image analysis, including detected text, freshness status, and other relevant information.
 ![image](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
+
+
+##System Design
+
+![image](https://github.com/user-attachments/assets/f257d828-796c-4ab7-8ef4-997cf8f0bc0b)
 
 ## Technologies Used
 
@@ -151,9 +155,6 @@ The system is designed to handle image uploads, process them through various mac
 - **Backend**: A Flask/FastAPI server that handles image processing requests and communicates with machine learning models.
 - **Machine Learning Models**: Various models for OCR, freshness detection, MRP and expiry detection, and item counting.
 
-### Architecture Diagram
-
-![image](https://github.com/user-attachments/assets/f257d828-796c-4ab7-8ef4-997cf8f0bc0b)
 
 
 
