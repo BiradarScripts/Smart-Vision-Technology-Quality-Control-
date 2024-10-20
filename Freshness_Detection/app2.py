@@ -11,6 +11,12 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langserve import add_routes
 
+
+
+
+
+          
+                   
 # Load environment variables
 load_dotenv()
 
