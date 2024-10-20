@@ -33,7 +33,13 @@ The UI is designed to be intuitive and user-friendly, featuring:
 ![image](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
 
 
-##System Design
+## System Design
+
+The system is designed to handle image uploads, process them through various machine learning models, and return analysis results. The architecture consists of:
+
+- **Frontend**: Built with Next.js, it provides a user interface for uploading images and displaying results.
+- **Backend**: A Flask/FastAPI server that handles image processing requests and communicates with machine learning models.
+- **Machine Learning Models**: Various models for OCR, freshness detection, MRP and expiry detection, and item counting.
 
 ![image](https://github.com/user-attachments/assets/f257d828-796c-4ab7-8ef4-997cf8f0bc0b)
 
@@ -147,13 +153,7 @@ To get started with the project, follow these steps:
     }
     ```
 
-## System Design
 
-The system is designed to handle image uploads, process them through various machine learning models, and return analysis results. The architecture consists of:
-
-- **Frontend**: Built with Next.js, it provides a user interface for uploading images and displaying results.
-- **Backend**: A Flask/FastAPI server that handles image processing requests and communicates with machine learning models.
-- **Machine Learning Models**: Various models for OCR, freshness detection, MRP and expiry detection, and item counting.
 
 
 
