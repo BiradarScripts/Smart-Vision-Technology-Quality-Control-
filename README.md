@@ -157,18 +157,5 @@ The UI is designed to be intuitive and user-friendly, featuring:
 ![image](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
 
 
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Make your changes and commit them (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a pull request.
-
-
-
 ## Acknowledgments
 - Special thanks to the creators of the libraries and frameworks used in this project.
