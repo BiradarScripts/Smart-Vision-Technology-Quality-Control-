@@ -90,7 +90,8 @@ To get started with the project, follow these steps:
 5. **Open your browser** and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## Project Structure
-![image](https://github.com/user-attachments/assets/502b1c9f-fda2-4a4d-99a5-7d847c0dc4fa)
+![image](https://github.com/user-attachments/assets/92aa3884-92c0-454e-a974-f235174a0939)
+
 
 
 
