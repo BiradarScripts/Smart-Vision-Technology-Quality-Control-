@@ -110,19 +110,57 @@ To get started with the project, follow these steps:
 5. **Open your browser** and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## Project Structure
-![image](https://github.com/user-attachments/assets/92aa3884-92c0-454e-a974-f235174a0939)
 
+```bash
+Smart-Vision-Technology-Quality-Control/
+│
+├── BrandDetail_Detection/     # Directory for brand detail detection
+│   ├── OCR_MODEL.py           # OCR processing
+│   └── ...                    # Other related files
+│
+├── Freshness_Detection/       # Directory for freshness detection
+│   ├── app2.py                 # Backend application for freshness detection
+│   ├── requirements.txt       # Python dependencies for freshness detection
+│   └── ...                    # Other related files
+│
+└── Item_Count_Detection/      # Directory for MRP and expiry detection
+|   ├── MRP_EXP_T2.ipynb       # Jupyter notebook for MRP and expiry detection
+|   └── ...                    # Other related files
+|
+└── MRP_Expiry_Detection/      # Directory for Item Count detection
+|   ├── YOLO.ipynb             # Jupyter notebook for Item Count detection
+|   └── ...                    # Other related files
+│
+├── web-app/                   # Reusable React components
+│   ├── components/            # Analysis results page component
+│   │   ├── creative-home-page.tsx   # Home page component
+│   │   ├── creative-analysis-page.tsx # Analysis results page component
+│   │   ├── FeatureCard.tsx     # Component for displaying feature cards
+│   │   ├── Header.tsx         # Header component for navigation
+│   │   ├── Footer.tsx         # Footer component
+│   │   └── ...                # Other UI components
+│   │
+│   ├── pages/                 # Next.js pages
+│   │   ├── index.tsx          # Homepage
+│   │   └── results.tsx        # Analysis results page
+│   │
+│   ├── public/                # Static assets (images, fonts, etc.)
+│   └── styles/                # CSS styles
+│
+├── .env                       # environmet variables to setup LLM's
+├── package.json               # Frontend dependencies and scripts
+├── README.md                  # Main project README file
 
+```
 
 
 ### Directory Descriptions
-
-- **backend/**: Contains the backend code, including the Flask application and API endpoints.
-- **web-app/**: Contains the frontend code built with Next.js, including components, pages, and styles.
 - **Brand_Detail_Detection/**: Jupyter notebooks for OCR and brand detail detection.
 - **Freshness_Detection/**: Contains requirements and scripts for freshness detection.
 - **Item_Count_Detection/**: Jupyter notebooks for item counting using YOLO.
 - **Mrp_Expiry_Detection/**: Jupyter notebooks for detecting MRP and expiry dates.
+- **web-app/**: Contains the frontend code built with Next.js, including components, pages, and styles.
+
 
 ## Usage
 
