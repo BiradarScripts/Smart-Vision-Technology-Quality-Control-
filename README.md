@@ -175,3 +175,7 @@ Smart-Vision-Technology-Quality-Control/
 
 ## Acknowledgments
 - Special thanks to the creators of the libraries and frameworks used in this project.
+
+## Youtube Link
+- https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq
+  
