@@ -18,7 +18,7 @@ Welcome to the **Smart Vision Technology Quality Control** project! This reposit
 
 ## Demo Video
 
-[![IMAGE ALT TEXT HERE](https://youtu.be/uqNquaDsiV4?si.jpg)](https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq)
+- https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq
 
 ## Features
 
@@ -176,6 +176,5 @@ Smart-Vision-Technology-Quality-Control/
 ## Acknowledgments
 - Special thanks to the creators of the libraries and frameworks used in this project.
 
-## Youtube Link
-- https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq
+
   
