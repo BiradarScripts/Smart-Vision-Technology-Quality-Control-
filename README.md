@@ -14,6 +14,12 @@ Welcome to the **Smart Vision Technology Quality Control** project! This reposit
 - [API Endpoints](#api-endpoints)
 - [Acknowledgments](#acknowledgments)
 
+
+
+## Demo Video
+
+[![IMAGE ALT TEXT HERE](https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq.jpg)](https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq)
+
 ## Features
 
 - **Image Analysis**: Upload images for analysis to detect various attributes of food products.
