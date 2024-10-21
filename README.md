@@ -173,36 +173,5 @@ Smart-Vision-Technology-Quality-Control/
 1. **Image Upload**: Users can upload images of food products for analysis.
 2. **Analysis Results**: The application will display the results of the analysis, including detected text, freshness status, and MRP/expiry information.
 
-## API Endpoints
-
-### Image Analysis
-
-- **POST /api/analyze-image**
-  - **Description**: Analyzes the uploaded image and returns the results.
-  - **Request**: 
-    ```json
-    {
-      "file": "image.jpg"
-    }
-    ```
-  - **Response**:
-    ```json
-    {
-      "analysis": {
-        "text": "Detected text",
-        "freshness": "Fresh",
-        "mrp": "100",
-        "expiry": "2025-12-31"
-      }
-    }
-    ```
-
-
-
-
-
-
-
-
 ## Acknowledgments
 - Special thanks to the creators of the libraries and frameworks used in this project.
