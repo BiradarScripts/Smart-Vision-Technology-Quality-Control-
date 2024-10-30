@@ -2,17 +2,7 @@
 
 Welcome to the **Smart Vision Technology Quality Control** project! This repository contains a comprehensive solution for quality control in food products using advanced image processing and machine learning techniques. The project leverages various technologies and frameworks to provide a robust and user-friendly application.
 
-## Table of Contents
 
-- [Features](#features)
-- [UI Design](#ui-design)
-- [System Design](#system-design)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Acknowledgments](#acknowledgments)
 
 
 
