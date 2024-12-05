@@ -1,0 +1,15 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Update with your Neon SQL connection string
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Entry {
+  id        Int      @id @default(autoincrement())
+  name      String
+  details   String
+  updatedAt DateTime @updatedAt
+}
