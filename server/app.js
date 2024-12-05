@@ -6,6 +6,7 @@ var logger = require('morgan');
 const entryRoutes = require("./routes/data");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const uploadRouter = require('./routes/upload_product');
 
 var app = express();
 
@@ -19,9 +20,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/api", entryRoutes);
+app.use("/api2", uploadRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -38,6 +41,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 const PORT = 3000;
 
 app.listen(PORT, () => {
