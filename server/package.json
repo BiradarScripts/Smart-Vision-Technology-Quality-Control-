@@ -2,8 +2,11 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "build": "prisma generate && vercel build",
+    "vercel-build": "prisma generate"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
