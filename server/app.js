@@ -48,9 +48,9 @@ app.use(function(err, req, res, next) {
 const PORT = 3000;
 
 // Only start listening when NOT in Vercel
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, 'localhost', () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-  });
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   app.listen(PORT, 'localhost', () => {
+//     console.log(`Server running at http://localhost:${PORT}`);
+//   });
+// }
 module.exports = app;
