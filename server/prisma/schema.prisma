@@ -13,3 +13,42 @@ model Entry {
   details   String
   updatedAt DateTime @updatedAt
 }
+
+model BrandItem {
+  id         String   @id @default(uuid())
+  name       String
+  brand      String
+  category   String?
+  count      Int
+  confidence Float
+}
+model ExpiryItem {
+  id         String @id @default(uuid())
+  name       String
+  mrp        String
+  expiryDate String
+  netwt      String
+}
+
+model AnalysisResult {
+  id                   String @id @default(uuid())
+  itemNumber           String
+  name                 String
+  direction            String
+  freshnessIndex       Float
+  status               String
+  visualColor          String?
+  texture              String?
+  firmness             String?
+  packagingCondition   String
+  estimatedShelfLife   String
+  recommendation       String
+}
+
+model NutrientInfo {
+  id          String @id @default(uuid())
+  name        String
+  category    String
+  nutrients   String
+  ingredients String
+}
