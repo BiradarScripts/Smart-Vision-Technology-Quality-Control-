@@ -7,6 +7,7 @@ var usersRouter = require('./routes/users');
 // const uploadRouter = require('./routes/upload_product');
 const brandItemsRoute = require('./routes/brand');
 const uploadItemsRoutes = require('./routes/upload');
+const cors = require('cors');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/api', uploadItemsRoutes);
 //   res.status(err.status || 500);
 //   res.render('error');
 // });
+app.use(cors());
 
 const PORT = 3000;
 
