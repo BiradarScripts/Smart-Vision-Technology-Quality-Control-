@@ -5,14 +5,15 @@
         "src": "app.js",
         "use": "@vercel/node",
         "config": {
-        "buildCommand": "prisma generate"
-      }
+          "buildCommand": "prisma generate"
         }
+      }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/src/index.js"
+        "dest": "/app.js"
       }
     ]
   }
+  
