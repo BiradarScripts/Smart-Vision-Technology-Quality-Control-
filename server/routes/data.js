@@ -14,10 +14,14 @@ router.use(express.json());
 const generatePDF = async (entries, headers, filename, res) => {
   try {
     const doc = new PDFDocument({ margin: 30 });
-    const pdfPath = path.join(__dirname, `${filename}.pdf`);
-    const stream = fs.createWriteStream(pdfPath);
-
-    doc.pipe(stream);
+    const chunks = [];
+    doc.on('data', chunk => chunks.push(chunk));
+    doc.on('end', () => {
+      const pdfBuffer = Buffer.concat(chunks);
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}.pdf"`);
+      res.send(pdfBuffer);
+    });
 
     // Title
     doc.fontSize(18).text(`${filename} Report`, { align: "center", underline: true });
@@ -57,13 +61,6 @@ const generatePDF = async (entries, headers, filename, res) => {
     });
 
     doc.end();
-
-    stream.on("finish", () => {
-      res.download(pdfPath, `${filename}.pdf`, (err) => {
-        if (err) console.error(err);
-        fs.unlinkSync(pdfPath); // Clean up the temporary file
-      });
-    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to generate PDF" });
