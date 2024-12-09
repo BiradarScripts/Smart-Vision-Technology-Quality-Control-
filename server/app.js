@@ -10,7 +10,7 @@ const uploadItemsRoutes = require('./routes/upload');
 const cors = require('cors');
 
 var app = express();
-
+app.use(cors());
 
 // app.use(logger('dev'));
 // app.use(express.json());
@@ -40,7 +40,7 @@ app.use('/upload', uploadItemsRoutes);
 //   res.status(err.status || 500);
 //   res.render('error');
 // });
-app.use(cors());
+
 
 const PORT = 3000;
 
