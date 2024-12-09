@@ -24,7 +24,7 @@ app.use('/users', usersRouter);
 app.use("/api", entryRoutes);
 // app.use("/api2", uploadRouter);
 app.use('/api', brandItemsRoute);
-app.use('/upload', uploadItemsRoutes);
+app.use('/api', uploadItemsRoutes);
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   next(createError(404));
