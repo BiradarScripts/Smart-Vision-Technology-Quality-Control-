@@ -21,18 +21,21 @@ model BrandItem {
   category   String?
   count      Int
   confidence Float
+  createdAt  DateTime @default(now())
 }
+
 model ExpiryItem {
-  id         String @id @default(uuid())
+  id         String   @id @default(uuid())
   name       String
   mrp        String
   expiryDate String
   netwt      String
+  createdAt  DateTime @default(now())
 }
 
 model AnalysisResult {
-  id                   String @id @default(uuid())
-  itemNumber           String
+  id                   String   @id @default(uuid())
+  itemNumber           String?
   name                 String
   direction            String
   freshnessIndex       Float
@@ -43,12 +46,14 @@ model AnalysisResult {
   packagingCondition   String
   estimatedShelfLife   String
   recommendation       String
+  createdAt            DateTime @default(now())
 }
 
 model NutrientInfo {
-  id          String @id @default(uuid())
+  id          String   @id @default(uuid())
   name        String
   category    String
   nutrients   String
   ingredients String
+  createdAt   DateTime @default(now())
 }
