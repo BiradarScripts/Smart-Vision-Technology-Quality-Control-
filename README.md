@@ -1,94 +1,141 @@
-# Smart Vision Technology Quality Control
+# DHRISHTI: Advanced Quality Control Using Smart Vision Technology
 
-Welcome to the **Smart Vision Technology Quality Control** project! This repository contains a comprehensive solution for quality control in food products using advanced image processing and machine learning techniques. The project leverages various technologies and frameworks to provide a robust and user-friendly application.
+Welcome to **DHRISHTI**, the next-generation solution for quality control in food products, leveraging cutting-edge image processing and machine learning technologies. This upgraded version builds upon the foundational Smart Vision Technology to provide a more advanced, efficient, and user-friendly experience.
 
-
-
-
+---
 
 ## Demo Video
+- Watch DHRISHTI in action: [https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq](https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq)
 
-- https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq
+---
 
 ## Features
 
-- **Image Analysis**: Upload images for analysis to detect various attributes of food products.
-- **OCR Capabilities**: Extract text from images using Optical Character Recognition (OCR).
-- **Freshness Detection**: Assess the freshness of food items based on visual cues.
-- **MRP and Expiry Detection**: Identify the Maximum Retail Price (MRP) and expiry dates from product packaging.
-- **User-Friendly Interface**: Built with Next.js and Tailwind CSS for a responsive and modern UI.
+### New Enhancements in DHRISHTI
+- **Advanced Image Analysis**: Enhanced algorithms for detecting food product attributes.
+- **Text Recognition (OCR)**: Extracts text with improved accuracy and multilingual support.
+- **Freshness & Quality Assessment**: Incorporates machine learning for better freshness detection.
+- **MRP & Expiry Detection**: Advanced recognition for retail price and expiry dates.
+- **Modernized UI/UX**: Improved design using Next.js, Tailwind CSS, and animations.
 
-## UI Design
+---
 
-The UI is designed to be intuitive and user-friendly, featuring:
+## Smart Vision Technology (Older Version)
 
-- **Home Page**: A welcoming interface for users to upload images.
-![WhatsApp Image 2024-12-08 at 09 22 29_97cddae4](https://github.com/user-attachments/assets/f3b68bda-d3be-426b-9d5e-165707ab2ab7)
+### Key Features
+- **Image-Based Analysis**: Basic algorithms for detecting food product attributes.
+- **OCR Capability**: Text recognition with limited accuracy.
+- **Freshness & Quality Indicators**: Simple detection methods for food freshness.
+- **User Interface**: Functional design with basic navigation.
 
+### Screenshots of Smart Vision
 
-- **Analysis Page**: Displays the results of the image analysis, including detected text, freshness status, and other relevant information.
-![image](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
+- **Home Page**: Simplistic upload and navigation interface.
+![Smart Vision Home Page](https://github.com/user-attachments/assets/smartvision-home)
 
+- **Analysis Results**: Displays analysis outcomes in a basic layout.
+![Smart Vision Analysis Page](https://github.com/user-attachments/assets/smartvision-analysis)
+
+---
+
+## DHRISHTI: The Next Generation
+
+### UI Design
+
+- **Home Page**: Streamlined for faster uploads and navigation.
+![Home Page Design](https://github.com/user-attachments/assets/f3b68bda-d3be-426b-9d5e-165707ab2ab7)
+
+- **Analysis Results**: Real-time, detailed visualizations of food product analysis.
+![Analysis Page Design](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
+
+---
 
 ## System Design
 
-The system is designed to handle image uploads, process them through various machine learning models, and return analysis results. The architecture consists of:
+DHRISHTI's architecture is built for efficiency and scalability:
 
-- **Frontend**: Built with Next.js, it provides a user interface for uploading images and displaying results.
-- **Backend**: A Flask/FastAPI server that handles image processing requests and communicates with machine learning models.
-- **Machine Learning Models**: Various models for OCR, freshness detection, MRP and expiry detection, and item counting.
+- **Frontend**: Redesigned using Next.js and Tailwind CSS for an engaging user experience.
+- **Backend**: Powered by Flask/FastAPI, seamlessly integrated with machine learning models.
+- **Machine Learning Models**: Updated YOLO for object detection, Hugging Face Transformers for OCR, and specialized models for freshness and MRP detection.
 
-![image](https://github.com/user-attachments/assets/f257d828-796c-4ab7-8ef4-997cf8f0bc0b)
+![System Design](https://github.com/user-attachments/assets/f257d828-796c-4ab7-8ef4-997cf8f0bc0b)
+
+---
 
 ## Technologies Used
 
-- **Frontend**: 
-  - Next.js
-  - React
-  - Tailwind CSS
-  - Framer Motion
-- **Backend**: 
-  - Flask
-  - FastAPI
-  - PyTorch
-  - OpenCV
-- **Machine Learning**: 
-  - Hugging Face Transformers
-  - YOLO (You Only Look Once) for object detection
-- **Database**: 
-  - SQLite (or any other database as per your implementation)
-- **Deployment**: 
-  - Vercel for frontend
-  - Ngrok for local development
+### Frontend
+- Next.js
+- React
+- Tailwind CSS
+- Framer Motion
+
+### Backend
+- Flask / FastAPI
+- PyTorch
+- OpenCV
+
+### Machine Learning
+- Hugging Face Transformers
+- YOLO (You Only Look Once)
+
+### Database
+- SQLite or any preferred database
+
+### Deployment
+- Vercel (Frontend)
+- Ngrok (Local Development)
+
+---
 
 ## Getting Started
 
-To get started with the project, follow these steps:
-
 ### Prerequisites
-
 - Node.js (v14 or later)
 - Python (v3.8 or later)
-- pip (Python package manager)
-- conda (for managing Python environments)
+- pip
+- conda (for Python environment management)
 
 ### Installation
 
-1. **Clone the repository**:
+#### Setting up Smart Vision
+
+1. **Clone the Smart Vision repository**:
    ```bash
-   git clone https://github.com/yourusername/Smart-Vision-Technology-Quality-Control-.git
-   cd Smart-Vision-Technology-Quality-Control-
+   git clone https://github.com/yourusername/Smart-Vision.git
+   cd Smart-Vision/web-app
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**:
+   ```bash
+   npm start
+   ```
+
+4. **Access Smart Vision**: Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+
+---
+
+#### Setting up DHRISHTI
+
+1. **Clone the DHRISHTI repository**:
+   ```bash
+   git clone https://github.com/yourusername/DHRISHTI.git
+   cd DHRISHTI/web-app-v2/client
    ```
 
 2. **Set up the frontend**:
    ```bash
-   cd web-app
    npm install
    ```
 
 3. **Set up the backend**:
    ```bash
-   cd backend
+   cd ../../backend
    conda create -p venv python==3.8
    conda activate venv
    pip install -r requirements.txt
@@ -104,68 +151,66 @@ To get started with the project, follow these steps:
      python app.py
      ```
 
-5. **Open your browser** and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
+5. **Access DHRISHTI**: Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+
+---
 
 ## Project Structure
 
+### Smart Vision
 ```bash
-Smart-Vision-Technology-Quality-Control/
+Smart-Vision/
 │
-├── BrandDetail_Detection/     # Directory for brand detail detection
-│   ├── OCR_MODEL.py           # OCR processing
-│   └── ...                    # Other related files
-│
-├── Freshness_Detection/       # Directory for freshness detection
-│   ├── app2.py                 # Backend application for freshness detection
-│   ├── requirements.txt       # Python dependencies for freshness detection
-│   └── ...                    # Other related files
-│
-└── Item_Count_Detection/      # Directory for MRP and expiry detection
-|   ├── MRP_EXP_T2.ipynb       # Jupyter notebook for MRP and expiry detection
-|   └── ...                    # Other related files
-|
-└── MRP_Expiry_Detection/      # Directory for Item Count detection
-|   ├── YOLO.ipynb             # Jupyter notebook for Item Count detection
-|   └── ...                    # Other related files
-│
-├── web-app/                   # Reusable React components
-│   ├── components/            # Analysis results page component
-│   │   ├── creative-home-page.tsx   # Home page component
-│   │   ├── creative-analysis-page.tsx # Analysis results page component
-│   │   ├── FeatureCard.tsx     # Component for displaying feature cards
-│   │   ├── Header.tsx         # Header component for navigation
-│   │   ├── Footer.tsx         # Footer component
-│   │   └── ...                # Other UI components
-│   │
-│   ├── pages/                 # Next.js pages
-│   │   ├── index.tsx          # Homepage
-│   │   └── results.tsx        # Analysis results page
-│   │
-│   ├── public/                # Static assets (images, fonts, etc.)
-│   └── styles/                # CSS styles
-│
-├── .env                       # environmet variables to setup LLM's
-├── package.json               # Frontend dependencies and scripts
-├── README.md                  # Main project README file
-
+├── web-app/                # Frontend for Smart Vision
+│   ├── public/             # Static assets
+│   ├── src/                # React components and pages
+│   └── ...
+├── backend/               # Backend scripts (if applicable)
+└── ...
 ```
 
+### DHRISHTI
+```bash
+DHRISHTI/
+│
+├── BrandDetail_Detection/      # OCR and brand detail detection
+│   ├── OCR_MODEL.py           # OCR processing script
+│   └── ...                    # Other files
+│
+├── Freshness_Detection/       # Scripts for freshness detection
+│   ├── app2.py                # Backend application
+│   └── requirements.txt       # Dependencies
+│
+├── Item_Count_Detection/      # MRP and expiry detection
+│   ├── MRP_EXP_T2.ipynb       # Jupyter notebook
+│   └── ...
+│
+├── web-app-v2/                # DHRISHTI frontend
+│   ├── client/                # New client-side application
+│   │   ├── components/        # Reusable React components
+│   │   ├── pages/             # Next.js pages
+│   │   ├── public/            # Static assets
+│   │   ├── styles/            # CSS styles
+│   │   └── ...
+│   └── ...
+├── .env                       # Environment variables for APIs/LLMs
+├── package.json               # Frontend dependencies and scripts
+├── README.md                  # Main project README file
+└── ...
+```
 
-### Directory Descriptions
-- **Brand_Detail_Detection/**: Jupyter notebooks for OCR and brand detail detection.
-- **Freshness_Detection/**: Contains requirements and scripts for freshness detection.
-- **Item_Count_Detection/**: Jupyter notebooks for item counting using YOLO.
-- **Mrp_Expiry_Detection/**: Jupyter notebooks for detecting MRP and expiry dates.
-- **web-app/**: Contains the frontend code built with Next.js, including components, pages, and styles.
-
+---
 
 ## Usage
 
-1. **Image Upload**: Users can upload images of food products for analysis.
-2. **Analysis Results**: The application will display the results of the analysis, including detected text, freshness status, and MRP/expiry information.
+1. **Image Upload**: Users can upload images of food products.
+2. **Real-Time Analysis**: Results displayed instantly with details such as freshness, MRP, and expiry.
+
+---
 
 ## Acknowledgments
-- Special thanks to the creators of the libraries and frameworks used in this project.
+- Special thanks to the contributors and developers of the frameworks and libraries used.
 
+---
 
-  
+Enjoy exploring DHRISHTI and Smart Vision, where advanced technology meets precision quality control!
