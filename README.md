@@ -1,12 +1,10 @@
-# DHRISHTI: Advanced Quality Control Using Smart Vision Technology
+# DRISHTI: Advanced Quality Control Using Smart Vision Technology
 
-Welcome to **DHRISHTI**, the next-generation solution for quality control in food products, leveraging cutting-edge image processing and machine learning technologies. This upgraded version builds upon the foundational Smart Vision Technology to provide a more advanced, efficient, and user-friendly experience.
-
+Welcome to **DRISHTI**, the next-generation solution for quality control in food products, leveraging cutting-edge image processing and machine learning technologies. This upgraded version builds upon the foundational Smart Vision Technology to provide a more advanced, efficient, and user-friendly experience.
 ---
 
 ## Demo Video
-- Watch DHRISHTI in action: [https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq](https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq)
-
+- Watch DHRISHTI in action: "Coming Soon"
 ---
 
 ## Features
@@ -18,9 +16,36 @@ Welcome to **DHRISHTI**, the next-generation solution for quality control in foo
 - **MRP & Expiry Detection**: Advanced recognition for retail price and expiry dates.
 - **Modernized UI/UX**: Improved design using Next.js, Tailwind CSS, and animations.
 
+### Screenshots of DRISHTI
+
+- **Home Page**: Simplistic upload and navigation interface.
+![image](https://github.com/user-attachments/assets/f12e5f7a-b377-4354-a74f-d1886a67d7e4)
+
+- **Analysis Results**: Displays analysis outcomes in a basic layout.
+![image](https://github.com/user-attachments/assets/d0c86315-108d-416e-a745-c35dfb456334)
+
+![image](https://github.com/user-attachments/assets/8a01ae9f-1a7e-485b-908e-a53754e3abf2)
+
+
+
 ---
 
-## Smart Vision Technology (Older Version)
+## System Design
+
+DRISHTI's architecture is built for efficiency and scalability:
+
+- **Frontend**: Redesigned using Next.js and Tailwind CSS for an engaging user experience.
+- **Backend**: Powered by Flask/FastAPI, seamlessly integrated with machine learning models.
+- **Machine Learning Models**: Updated YOLO for object detection, Hugging Face Transformers for OCR, and specialized models for freshness and MRP detection.
+
+![image](https://github.com/user-attachments/assets/299312c9-38ee-4349-a957-f492b1841f99)
+---
+
+## Smart-Vision Technology (Older Version)
+
+## Demo Video
+- Watch Smart-Vision in action: [https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq](https://youtu.be/uqNquaDsiV4?si=XmiUVVtRb811LiQq)
+---
 
 ### Key Features
 - **Image-Based Analysis**: Basic algorithms for detecting food product attributes.
@@ -37,22 +62,9 @@ Welcome to **DHRISHTI**, the next-generation solution for quality control in foo
 ![Smart Vision Analysis Page](https://github.com/user-attachments/assets/smartvision-analysis)
 
 ---
-
-## DHRISHTI: The Next Generation
-
-### UI Design
-
-- **Home Page**: Streamlined for faster uploads and navigation.
-![Home Page Design](https://github.com/user-attachments/assets/f3b68bda-d3be-426b-9d5e-165707ab2ab7)
-
-- **Analysis Results**: Real-time, detailed visualizations of food product analysis.
-![Analysis Page Design](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
-
----
-
 ## System Design
 
-DHRISHTI's architecture is built for efficiency and scalability:
+Smart-Vision's architecture is built for efficiency and scalability:
 
 - **Frontend**: Redesigned using Next.js and Tailwind CSS for an engaging user experience.
 - **Backend**: Powered by Flask/FastAPI, seamlessly integrated with machine learning models.
@@ -120,14 +132,14 @@ DHRISHTI's architecture is built for efficiency and scalability:
 
 ---
 
-#### Setting up DHRISHTI
+#### Setting up DRISHTI
 
 1. **Clone the DHRISHTI repository**:
    ```bash
-   git clone https://github.com/yourusername/DHRISHTI.git
-   cd DHRISHTI/web-app-v2/client
+   git clone https://github.com/yourusername/Smart-Vision.git
+   cd  web-app-v2/client
    ```
-
+      
 2. **Set up the frontend**:
    ```bash
    npm install
@@ -171,7 +183,14 @@ Smart-Vision/
 
 ### DHRISHTI
 ```bash
-DHRISHTI/
+Smart-Vision/
+│
+├── web-app/                # Frontend for Smart Vision
+│   ├── public/             # Static assets
+│   ├── src/                # React components and pages
+│   └── ...
+├── backend/               # Backend scripts (if applicable)
+└── ...
 │
 ├── BrandDetail_Detection/      # OCR and brand detail detection
 │   ├── OCR_MODEL.py           # OCR processing script
@@ -185,8 +204,8 @@ DHRISHTI/
 │   ├── MRP_EXP_T2.ipynb       # Jupyter notebook
 │   └── ...
 │
-├── web-app-v2/                # DHRISHTI frontend
-│   ├── client/                # New client-side application
+├── web-app-v2/                 # New client-side application# DHRISHTI frontend
+│   ├── client/                # DHRISHTI frontend
 │   │   ├── components/        # Reusable React components
 │   │   ├── pages/             # Next.js pages
 │   │   ├── public/            # Static assets
