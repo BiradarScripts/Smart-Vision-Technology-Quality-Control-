@@ -6,7 +6,7 @@ Welcome to **DRISHTI**, the next-generation solution for quality control in food
 
 ## 🔍 Try DRISHTI
 
-[Web App](https://smartvision-rust.vercel.app)
+[Web App](*Coming Soon*)
 
 ## 🎥 Demo Video
 - Watch DRISHTI in action: *Coming Soon*
