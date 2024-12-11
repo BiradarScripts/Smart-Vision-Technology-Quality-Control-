@@ -56,10 +56,10 @@ DRISHTI's architecture is built for efficiency and scalability:
 ### Screenshots of Smart Vision
 
 - **Home Page**: Simplistic upload and navigation interface.
-![Smart Vision Home Page](https://github.com/user-attachments/assets/smartvision-home)
+![image](https://github.com/user-attachments/assets/04ceada4-bbf2-4c0d-90e8-2ed328b8d72a)
 
 - **Analysis Results**: Displays analysis outcomes in a basic layout.
-![Smart Vision Analysis Page](https://github.com/user-attachments/assets/smartvision-analysis)
+![image](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
 
 ---
 ## System Design
