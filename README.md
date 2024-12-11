@@ -3,9 +3,14 @@
 Welcome to **DRISHTI**, the next-generation solution for quality control in food products, leveraging cutting-edge image processing and machine learning technologies. This upgraded version builds upon the foundational Smart Vision Technology to provide a more advanced, efficient, and user-friendly experience.
 ---
 
+## Try DRISHTI
+
+[Web App](https://smartvision-rust.vercel.app)
+
 ## Demo Video
 - Watch DHRISHTI in action: "Coming Soon"
 ---
+
 
 ## Features
 
