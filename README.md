@@ -179,18 +179,6 @@ Smart-Vision/
 │   └── ...
 ├── backend/               # Backend scripts (if applicable)
 └── ...
-```
-
-### DHRISHTI
-```bash
-Smart-Vision/
-│
-├── web-app/                # Frontend for Smart Vision
-│   ├── public/             # Static assets
-│   ├── src/                # React components and pages
-│   └── ...
-├── backend/               # Backend scripts (if applicable)
-└── ...
 │
 ├── BrandDetail_Detection/      # OCR and brand detail detection
 │   ├── OCR_MODEL.py           # OCR processing script
