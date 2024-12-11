@@ -1,0 +1,302 @@
+[
+    {
+        "product_id": 1,
+        "product_name": "Apple Juice",
+        "mrp": 120.50,
+        "expiry_date": "2025-01-15"
+    },
+    {
+        "product_id": 2,
+        "product_name": "Banana Chips",
+        "mrp": 80.00,
+        "expiry_date": "2024-12-10"
+    },
+    {
+        "product_id": 3,
+        "product_name": "Chocolate Bar",
+        "mrp": 50.75,
+        "expiry_date": "2025-03-01"
+    },
+    {
+        "product_id": 4,
+        "product_name": "Peanut Butter",
+        "mrp": 250.00,
+        "expiry_date": "2025-05-20"
+    },
+    {
+        "product_id": 5,
+        "product_name": "Honey",
+        "mrp": 350.00,
+        "expiry_date": "2025-07-25"
+    },
+    {
+        "product_id": 6,
+        "product_name": "Green Tea",
+        "mrp": 200.00,
+        "expiry_date": "2025-06-15"
+    },
+    {
+        "product_id": 7,
+        "product_name": "Almonds",
+        "mrp": 500.00,
+        "expiry_date": "2025-08-30"
+    },
+    {
+        "product_id": 8,
+        "product_name": "Pasta",
+        "mrp": 150.00,
+        "expiry_date": "2024-11-05"
+    },
+    {
+        "product_id": 9,
+        "product_name": "Canned Tuna",
+        "mrp": 220.00,
+        "expiry_date": "2026-01-10"
+    },
+    {
+        "product_id": 10,
+        "product_name": "Cheese Spread",
+        "mrp": 300.00,
+        "expiry_date": "2025-04-15"
+    },
+    {
+        "product_id": 11,
+        "product_name": "Orange Marmalade",
+        "mrp": 180.00,
+        "expiry_date": "2025-05-10"
+    },
+    {
+        "product_id": 12,
+        "product_name": "Wheat Flour",
+        "mrp": 40.00,
+        "expiry_date": "2025-02-01"
+    },
+    {
+        "product_id": 13,
+        "product_name": "Instant Noodles",
+        "mrp": 25.00,
+        "expiry_date": "2024-12-30"
+    },
+    {
+        "product_id": 14,
+        "product_name": "Cornflakes",
+        "mrp": 150.00,
+        "expiry_date": "2025-06-20"
+    },
+    {
+        "product_id": 15,
+        "product_name": "Tomato Ketchup",
+        "mrp": 90.00,
+        "expiry_date": "2025-03-05"
+    },
+    {
+        "product_id": 16,
+        "product_name": "Granola Bars",
+        "mrp": 180.00,
+        "expiry_date": "2025-04-25"
+    },
+    {
+        "product_id": 17,
+        "product_name": "Pickle",
+        "mrp": 120.00,
+        "expiry_date": "2025-08-15"
+    },
+    {
+        "product_id": 18,
+        "product_name": "Soy Sauce",
+        "mrp": 85.00,
+        "expiry_date": "2025-09-01"
+    },
+    {
+        "product_id": 19,
+        "product_name": "Cooking Oil",
+        "mrp": 500.00,
+        "expiry_date": "2025-07-10"
+    },
+    {
+        "product_id": 20,
+        "product_name": "Rice",
+        "mrp": 45.00,
+        "expiry_date": "2026-01-01"
+    },
+    {
+        "product_id": 21,
+        "product_name": "Frozen Peas",
+        "mrp": 120.00,
+        "expiry_date": "2025-02-28"
+    },
+    {
+        "product_id": 22,
+        "product_name": "Strawberry Jam",
+        "mrp": 150.00,
+        "expiry_date": "2025-12-01"
+    },
+    {
+        "product_id": 23,
+        "product_name": "Potato Chips",
+        "mrp": 60.00,
+        "expiry_date": "2025-01-20"
+    },
+    {
+        "product_id": 24,
+        "product_name": "Cashew Nuts",
+        "mrp": 700.00,
+        "expiry_date": "2025-10-15"
+    },
+    {
+        "product_id": 25,
+        "product_name": "Brown Bread",
+        "mrp": 40.00,
+        "expiry_date": "2024-12-05"
+    },
+    {
+        "product_id": 26,
+        "product_name": "Yogurt",
+        "mrp": 90.00,
+        "expiry_date": "2024-12-20"
+    },
+    {
+        "product_id": 27,
+        "product_name": "Olive Oil",
+        "mrp": 600.00,
+        "expiry_date": "2025-11-30"
+    },
+    {
+        "product_id": 28,
+        "product_name": "Ice Cream",
+        "mrp": 120.00,
+        "expiry_date": "2024-11-25"
+    },
+    {
+        "product_id": 29,
+        "product_name": "Cereal Bars",
+        "mrp": 200.00,
+        "expiry_date": "2025-03-30"
+    },
+    {
+        "product_id": 30,
+        "product_name": "Tomato Soup",
+        "mrp": 75.00,
+        "expiry_date": "2025-04-10"
+    },
+    {
+        "product_id": 31,
+        "product_name": "Multigrain Biscuits",
+        "mrp": 110.00,
+        "expiry_date": "2025-06-15"
+    },
+    {
+        "product_id": 32,
+        "product_name": "Energy Drink",
+        "mrp": 85.00,
+        "expiry_date": "2025-01-05"
+    },
+    {
+        "product_id": 33,
+        "product_name": "Mixed Nuts",
+        "mrp": 450.00,
+        "expiry_date": "2025-09-20"
+    },
+    {
+        "product_id": 34,
+        "product_name": "Vegetable Oil",
+        "mrp": 250.00,
+        "expiry_date": "2025-08-25"
+    },
+    {
+        "product_id": 35,
+        "product_name": "Instant Coffee",
+        "mrp": 150.00,
+        "expiry_date": "2025-12-10"
+    },
+    {
+        "product_id": 36,
+        "product_name": "Coconut Water",
+        "mrp": 60.00,
+        "expiry_date": "2024-12-25"
+    },
+    {
+        "product_id": 37,
+        "product_name": "Raisins",
+        "mrp": 300.00,
+        "expiry_date": "2025-03-10"
+    },
+    {
+        "product_id": 38,
+        "product_name": "Herbal Tea",
+        "mrp": 220.00,
+        "expiry_date": "2025-04-20"
+    },
+    {
+        "product_id": 39,
+        "product_name": "Brown Sugar",
+        "mrp": 75.00,
+        "expiry_date": "2026-01-01"
+    },
+    {
+        "product_id": 40,
+        "product_name": "Whole Grain Bread",
+        "mrp": 45.00,
+        "expiry_date": "2024-12-15"
+    },
+    {
+        "product_id": 41,
+        "product_name": "Frozen Corn",
+        "mrp": 110.00,
+        "expiry_date": "2025-03-05"
+    },
+    {
+        "product_id": 42,
+        "product_name": "Mayonnaise",
+        "mrp": 95.00,
+        "expiry_date": "2025-06-30"
+    },
+    {
+        "product_id": 43,
+        "product_name": "Sweet Corn Soup",
+        "mrp": 80.00,
+        "expiry_date": "2025-02-25"
+    },
+    {
+        "product_id": 44,
+        "product_name": "Organic Honey",
+        "mrp": 400.00,
+        "expiry_date": "2026-01-15"
+    },
+    {
+        "product_id": 45,
+        "product_name": "Trail Mix",
+        "mrp": 350.00,
+        "expiry_date": "2025-11-10"
+    },
+    {
+        "product_id": 46,
+        "product_name": "Fruit Jam",
+        "mrp": 120.00,
+        "expiry_date": "2025-05-15"
+    },
+    {
+        "product_id": 47,
+        "product_name": "Almond Butter",
+        "mrp": 550.00,
+        "expiry_date": "2025-10-05"
+    },
+    {
+        "product_id": 48,
+        "product_name": "Cheddar Cheese",
+        "mrp": 280.00,
+        "expiry_date": "2025-09-15"
+    },
+    {
+        "product_id": 49,
+        "product_name": "Basmati Rice",
+        "mrp": 120.00,
+        "expiry_date": "2025-07-01"
+    },
+    {
+        "product_id": 50,
+        "product_name": "Oatmeal",
+        "mrp": 200.00,
+        "expiry_date": "2025-03-25"
+    }
+]
