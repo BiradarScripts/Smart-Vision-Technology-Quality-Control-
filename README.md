@@ -6,7 +6,7 @@ Welcome to **DRISHTI**, the next-generation solution for quality control in food
 
 ## 🔍 Try DRISHTI
 
-[Web App](*Coming Soon*)
+ *Coming Soon*
 
 ## 🎥 Demo Video
 - Watch DRISHTI in action: *Coming Soon*
