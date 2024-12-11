@@ -1,48 +1,59 @@
-# DRISHTI: Advanced Quality Control Using Smart Vision Technology
+# DRISHTI: Advanced Quality Control Using Smart Vision Technology 💡
 
 Welcome to **DRISHTI**, the next-generation solution for quality control in food products, leveraging cutting-edge image processing and machine learning technologies. This upgraded version builds upon the foundational Smart Vision Technology to provide a more advanced, efficient, and user-friendly experience.
+
 ---
 
-## Try DRISHTI
+## 🔍 Try DRISHTI
 
 [Web App](https://smartvision-rust.vercel.app)
 
-## Demo Video
-- Watch DHRISHTI in action: "Coming Soon"
----
-
-
-## Features
-
-### New Enhancements in DHRISHTI
-- **Advanced Image Analysis**: Enhanced algorithms for detecting food product attributes.
-- **Text Recognition (OCR)**: Extracts text with improved accuracy and multilingual support.
-- **Freshness & Quality Assessment**: Incorporates machine learning for better freshness detection.
-- **MRP & Expiry Detection**: Advanced recognition for retail price and expiry dates.
-- **Modernized UI/UX**: Improved design using Next.js, Tailwind CSS, and animations.
-
-### Web App of DRISHTI
-
-- **Home Page**: Simplistic upload and navigation interface.
-![image](https://github.com/user-attachments/assets/f12e5f7a-b377-4354-a74f-d1886a67d7e4)
-
-- **Image Upload Page**: Simplistic upload interface.
-![image](https://github.com/user-attachments/assets/e0b4e353-5020-4f47-a040-94db5fe7e3f1)
-
-- **Analysis Results**: Displays analysis outcomes in a basic layout.
-![image](https://github.com/user-attachments/assets/d0c86315-108d-416e-a745-c35dfb456334)
-
-- **AI Chat**: Your personal AI nutritionist.
-![image](https://github.com/user-attachments/assets/f96e606e-7623-46f9-a8ba-7274576312b3)
-
-- **Dashboard**: Track what you eat.
-![image](https://github.com/user-attachments/assets/93a0a128-d4ed-4f99-83f9-321bd72e9791)
-
-
+## 🎥 Demo Video
+- Watch DRISHTI in action: *Coming Soon*
 
 ---
 
-## System Design
+## 📊 Features
+
+### ✨ New Enhancements in DRISHTI
+- **🔢 Advanced Image Analysis**: Enhanced algorithms for detecting food product attributes.
+- **🔎 Text Recognition (OCR)**: Extracts text with improved accuracy and multilingual support.
+- **🍇 Freshness & Quality Assessment**: Incorporates machine learning for better freshness detection.
+- **💸 MRP & Expiry Detection**: Advanced recognition for retail price and expiry dates.
+- **🌐 Modernized UI/UX**: Improved design using Next.js, Tailwind CSS, and animations.
+
+---
+
+## 📝 Web App of DRISHTI
+
+### 🏠 Home Page
+Simplistic upload and navigation interface.
+
+![Home Page](https://github.com/user-attachments/assets/f12e5f7a-b377-4354-a74f-d1886a67d7e4)
+
+### 📎 Image Upload Page
+Simplistic upload interface.
+
+![Image Upload Page](https://github.com/user-attachments/assets/e0b4e353-5020-4f47-a040-94db5fe7e3f1)
+
+### 🔢 Analysis Results
+Displays analysis outcomes in a basic layout.
+
+![Analysis Results](https://github.com/user-attachments/assets/d0c86315-108d-416e-a745-c35dfb456334)
+
+### 🤖 AI Chat
+Your personal AI nutritionist.
+
+![AI Chat](https://github.com/user-attachments/assets/f96e606e-7623-46f9-a8ba-7274576312b3)
+
+### 🔄 Dashboard
+Track what you eat.
+
+![Dashboard](https://github.com/user-attachments/assets/93a0a128-d4ed-4f99-83f9-321bd72e9791)
+
+---
+
+## 🌐 System Design
 
 DRISHTI's architecture is built for efficiency and scalability:
 
@@ -50,8 +61,11 @@ DRISHTI's architecture is built for efficiency and scalability:
 - **Backend**: Powered by Flask/FastAPI, seamlessly integrated with machine learning models.
 - **Machine Learning Models**: Updated YOLO for object detection, Hugging Face Transformers for OCR, and specialized models for freshness and MRP detection.
 
-![image](https://github.com/user-attachments/assets/299312c9-38ee-4349-a957-f492b1841f99)
+![System Design](https://github.com/user-attachments/assets/299312c9-38ee-4349-a957-f492b1841f99)
+
 ---
+
+
 
 ## Smart-Vision Technology (Older Version)
 
