@@ -23,7 +23,8 @@ Welcome to the **Smart Vision Technology Quality Control** project! This reposit
 The UI is designed to be intuitive and user-friendly, featuring:
 
 - **Home Page**: A welcoming interface for users to upload images.
-![image](https://github.com/user-attachments/assets/04ceada4-bbf2-4c0d-90e8-2ed328b8d72a)
+![WhatsApp Image 2024-12-08 at 09 22 29_97cddae4](https://github.com/user-attachments/assets/f3b68bda-d3be-426b-9d5e-165707ab2ab7)
+
 
 - **Analysis Page**: Displays the results of the image analysis, including detected text, freshness status, and other relevant information.
 ![image](https://github.com/user-attachments/assets/76103863-a27b-4620-be9c-265de2f718b8)
