@@ -16,15 +16,22 @@ Welcome to **DRISHTI**, the next-generation solution for quality control in food
 - **MRP & Expiry Detection**: Advanced recognition for retail price and expiry dates.
 - **Modernized UI/UX**: Improved design using Next.js, Tailwind CSS, and animations.
 
-### Screenshots of DRISHTI
+### Web App of DRISHTI
 
 - **Home Page**: Simplistic upload and navigation interface.
 ![image](https://github.com/user-attachments/assets/f12e5f7a-b377-4354-a74f-d1886a67d7e4)
 
+- **Image Upload Page**: Simplistic upload interface.
+![image](https://github.com/user-attachments/assets/e0b4e353-5020-4f47-a040-94db5fe7e3f1)
+
 - **Analysis Results**: Displays analysis outcomes in a basic layout.
 ![image](https://github.com/user-attachments/assets/d0c86315-108d-416e-a745-c35dfb456334)
 
-![image](https://github.com/user-attachments/assets/8a01ae9f-1a7e-485b-908e-a53754e3abf2)
+- **AI Chat **: Your personal AI nutritionist.
+![image](https://github.com/user-attachments/assets/f96e606e-7623-46f9-a8ba-7274576312b3)
+
+- **Dashboard  **: Track what you eat.
+![image](https://github.com/user-attachments/assets/93a0a128-d4ed-4f99-83f9-321bd72e9791)
 
 
 
