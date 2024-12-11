@@ -27,10 +27,10 @@ Welcome to **DRISHTI**, the next-generation solution for quality control in food
 - **Analysis Results**: Displays analysis outcomes in a basic layout.
 ![image](https://github.com/user-attachments/assets/d0c86315-108d-416e-a745-c35dfb456334)
 
-- **AI Chat **: Your personal AI nutritionist.
+- **AI Chat**: Your personal AI nutritionist.
 ![image](https://github.com/user-attachments/assets/f96e606e-7623-46f9-a8ba-7274576312b3)
 
-- **Dashboard  **: Track what you eat.
+- **Dashboard**: Track what you eat.
 ![image](https://github.com/user-attachments/assets/93a0a128-d4ed-4f99-83f9-321bd72e9791)
 
 
