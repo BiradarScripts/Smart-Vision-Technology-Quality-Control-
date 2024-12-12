@@ -143,7 +143,7 @@ export default function UploadNutrientInfoPage() {
         formData.append('key', 'Front packet')
         formData.append('another_key', 'dsfgs')
 
-        const response = await fetch('https://grid-backend-heil.onrender.com/api/Brand-Content', {
+        const response = await fetch('http://127.0.0.1:8000/api/Brand-Content', {
           method: 'POST',
           body: formData,
         })
