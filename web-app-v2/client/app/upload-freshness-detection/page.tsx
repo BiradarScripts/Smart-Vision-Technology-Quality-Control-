@@ -112,7 +112,7 @@ export default function UploadFreshnessDetectionPage() {
         formData.append('key', 'Front packet')
         formData.append('another_key', 'dsfgs')
 
-        const apiResponse = await fetch('https://grid-backend-heil.onrender.com/api/analyze-image', {
+        const apiResponse = await fetch('http://127.0.0.1:8000/api/analyze-image', {
           method: 'POST',
           body: formData,
         })
