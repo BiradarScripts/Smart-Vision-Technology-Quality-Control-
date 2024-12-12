@@ -203,20 +203,33 @@ Smart-Vision/
 │   ├── public/             # Static assets
 │   ├── src/                # React components and pages
 │   └── ...
-├── backend/               # Backend scripts (if applicable)
-└── ...
 │
 ├── BrandDetail_Detection/      # OCR and brand detail detection
 │   ├── OCR_MODEL.py           # OCR processing script
 │   └── ...                    # Other files
-│
+|
+├── CodeOf_Detection/     
+│   ├── FineTuneBrand.py          
+│   └── FineTuneNutri.py                   
+│   ├── client.ipynb          
+│   └── train_ocr.ipynb                    
+|   
 ├── Freshness_Detection/       # Scripts for freshness detection
 │   ├── app2.py                # Backend application
 │   └── requirements.txt       # Dependencies
 │
 ├── Item_Count_Detection/      # MRP and expiry detection
-│   ├── MRP_EXP_T2.ipynb       # Jupyter notebook
-│   └── ...
+│   ├── YOLO.ipynb       # Jupyter notebook
+│   └── Dataset
+|
+├── MRP_Expiry_Detection/      # MRP and expiry detection
+│   ├── code       # Jupyter notebook
+│   └── Dataset
+│   ├── Images       # Jupyter notebook
+│   └── MRP_EXP_T2.ipynb
+|
+├── Server/               # Backend scripts (if applicable)
+└── ...
 │
 ├── web-app-v2/                 # New client-side application# DHRISHTI frontend
 │   ├── client/                # DHRISHTI frontend
@@ -226,6 +239,14 @@ Smart-Vision/
 │   │   ├── styles/            # CSS styles
 │   │   └── ...
 │   └── ...
+|
+├── web-app/               # Smart-Vision(Old-Version)              
+│   ├── components/        # Reusable React components
+│   ├── pages/             # Next.js pages
+│   ├── public/            # Static assets
+│   ├── styles/            # CSS styles
+│   ├── ...           
+│   
 ├── .env                       # Environment variables for APIs/LLMs
 ├── package.json               # Frontend dependencies and scripts
 ├── README.md                  # Main project README file
