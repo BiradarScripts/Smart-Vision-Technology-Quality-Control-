@@ -104,7 +104,7 @@ export default function UploadBrandDetectionPage() {
         formData.append('file', dataURItoBlob(image))
         formData.append('key', 'Brand Detection')
 
-        const apiResponse = await fetch('https://grid-backend-heil.onrender.com/api/Brand-Name', {
+        const apiResponse = await fetch('http://127.0.0.1:8000/api/Brand-Name', {
           method: 'POST',
           body: formData,
         })
