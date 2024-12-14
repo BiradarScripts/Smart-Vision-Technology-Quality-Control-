@@ -46,7 +46,7 @@ For each item detected in the image, provide the following details:
 Item Number:"Give the number as you go on detecting elements"
 Item Name:"Name of the eatable item"
 Direction: "Position/direction of the item in the image, e.g., 'top-left,' 'center,' 'bottom-right,' etc."
-Freshness Index: "FI (Out of 10)",Status: "Fresh/Moderately Fresh/Overripe/Stale/etc."
+Freshness Index: "FI (give only one number Out of 10)",Status: "Fresh/Moderately Fresh/Overripe/Stale/etc."
 Visual Color: "Brief description of the item’s color and how it indicates its freshness"
 Surface Texture: "Brief description of the surface condition and texture"
 Firmness Level: "Brief description of how firm or soft the item likely is, if applicable"
