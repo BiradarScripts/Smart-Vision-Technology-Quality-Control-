@@ -53,6 +53,177 @@ Track what you eat.
 
 ---
 
+
+## Brands in dataset 
+
+Food and Beverages
+
+1. Parle (e.g., Parle-G biscuits)
+
+
+2. Britannia (e.g., Good Day, Marie Gold)
+
+
+3. Amul (e.g., butter, milk, ice cream)
+
+
+4. Haldiram's (e.g., snacks, sweets)
+
+
+5. Tata Tea (e.g., Tata Premium, Tata Gold)
+
+
+6. Horlicks
+
+
+7. Bournvita
+
+
+8. MTR (e.g., ready-to-eat meals, masalas)
+
+
+9. Nestlé India (e.g., Maggi, Nescafé, KitKat)
+
+
+10. Mother Dairy (e.g., milk, curd, ice cream)
+
+
+11. Dabur (e.g., Chyawanprash, Real juices)
+
+
+12. Paper Boat (e.g., drinks like Aam Panna, Jaljeera)
+
+
+13. ITC (e.g., Sunfeast, Aashirvaad atta)
+
+
+14. PepsiCo India (e.g., Lay's, Kurkure, Tropicana)
+
+
+
+
+---
+
+FMCG (Fast Moving Consumer Goods)
+
+15. Patanjali (e.g., Ayurvedic products, food items)
+
+
+16. Godrej (e.g., soaps, hair products)
+
+
+17. Himalaya (e.g., wellness products, face washes)
+
+
+18. Nirma (e.g., washing powder, soap)
+
+
+19. Tata Salt (e.g., iodized salt)
+
+
+20. Surf Excel (e.g., detergent powders, liquids)
+
+
+21. Vim (e.g., dishwashing bars/liquids)
+
+
+22. Colgate (toothpaste and brushes made in India)
+
+
+23. Closeup
+
+
+24. Medimix (e.g., Ayurvedic soaps)
+
+
+25. Lux (soap brand under Unilever India)
+
+
+
+
+---
+
+Snacks and Packaged Food
+
+26. Bikano (e.g., namkeens, sweets)
+
+
+27. Balaji Wafers (e.g., chips and snacks)
+
+
+28. Priya (e.g., pickles, ready-to-eat foods)
+
+
+29. Lijjat Papad
+
+
+30. Tops (e.g., sauces, pickles, jams)
+
+
+
+
+---
+
+Dairy and Processed Goods
+
+31. Verka (e.g., dairy products in North India)
+
+
+32. Gokul Dairy
+
+
+33. Nandini (Karnataka-based milk brand)
+
+
+34. Aavin (Tamil Nadu-based dairy products)
+
+
+
+
+---
+
+Oil and Grocery Brands
+
+35. Fortune (e.g., cooking oil, atta)
+
+
+36. Saffola (e.g., edible oils, oats)
+
+
+37. Dhara (cooking oils)
+
+
+38. 24 Mantra Organic (organic food products)
+
+
+
+
+---
+
+Confectionery and Drinks
+
+39. Frooti (mango drink)
+
+
+40. Maaza (mango drink)
+
+
+41. Slice (mango drink)
+
+
+42. Thums Up
+
+
+43. Limca
+
+
+44. Appy Fizz
+
+
+
+
+---
+
 ## 🌐 System Design
 
 DRISHTI's architecture is built for efficiency and scalability:
