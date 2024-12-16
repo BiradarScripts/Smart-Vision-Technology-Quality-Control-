@@ -224,6 +224,33 @@ Confectionery and Drinks
 
 ---
 
+
+## Fruits in Dataset
+
+Fruits for Freshness Detection
+
+1. Banana
+
+
+
+2. Apple
+
+
+
+3. Kiwi
+
+
+
+
+4. Oranges
+
+
+
+
+
+5. Pineapple
+
+
 ## 🌐 System Design
 
 DRISHTI's architecture is built for efficiency and scalability:
