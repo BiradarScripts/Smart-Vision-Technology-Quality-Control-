@@ -63,7 +63,7 @@ def label_images(image_paths):
 # Main function
 def main():
     # URL of the e-commerce page (replace with actual grocery website URL)
-    ecommerce_url = "https://example.com/grocery"
+    ecommerce_url = "https://www.flipkart.com/grocery"
     save_directory = "grocery_images"
 
     # Step 1: Scrape images
