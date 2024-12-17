@@ -53,6 +53,18 @@ Track what you eat.
 
 ---
 
+## Pre Processing
+
+![image](https://github.com/user-attachments/assets/61644dec-1ed9-45de-94b5-50726a961591)
+
+## Model Designs
+
+![image](https://github.com/user-attachments/assets/d82d8f43-c686-4a5d-82c4-3a9d13d5067b)
+![image](https://github.com/user-attachments/assets/04be33f0-cde9-475f-81ce-ab904b1d045a)
+
+![image](https://github.com/user-attachments/assets/8d6735d9-f486-46f3-b268-76fb3409930c)
+
+
 
 ## Brands in dataset 
 
