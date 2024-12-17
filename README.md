@@ -66,7 +66,7 @@ Track what you eat.
 
 
 
-## Brands in dataset 
+## Some of the Brands in dataset 
 
 Food and Beverages
 
