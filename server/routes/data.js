@@ -5,13 +5,14 @@ const fs = require("fs");
 const path = require("path");
 
 const router = express.Router();
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 // Middleware to parse JSON
 router.use(express.json());
 
 // Utility function to generate PDF
 const generatePDF = async (entries, headers, filename, res) => {
+  const prisma= req.prisma;
   try {
     const doc = new PDFDocument({ margin: 30 });
     const chunks = [];

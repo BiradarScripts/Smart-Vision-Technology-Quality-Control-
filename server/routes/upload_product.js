@@ -14,6 +14,7 @@ const fileManager = new GoogleAIFileManager(process.env.API_KEY);
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 router.post("/upload-image", upload.single("image"), async (req, res) => {
+    const prisma = req.prisma;
     try {
         const filePath = req.file.path;
         const fileMimeType = req.file.mimetype;

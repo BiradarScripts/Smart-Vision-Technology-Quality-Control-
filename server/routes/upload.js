@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 // Save Expiry Items
 router.post('/expiry', async (req, res) => {
+
+  const prisma= req.prisma;
   const items = req.body;
+  console.log(items);
   try {
     const savedItems = await prisma.expiryItem.createMany({
       data: items,
@@ -19,6 +22,7 @@ router.post('/expiry', async (req, res) => {
 
 // Save Analysis Results
 router.post('/analysis', async (req, res) => {
+  const prisma= req.prisma;
   const results = req.body;
   try {
     const savedResults = await prisma.analysisResult.createMany({
@@ -33,6 +37,7 @@ router.post('/analysis', async (req, res) => {
 
 // Save Nutrient Info
 router.post('/nutrient', async (req, res) => {
+  const prisma= req.prisma;
   const nutrients = req.body;
   try {
     const savedNutrients = await prisma.nutrientInfo.createMany({

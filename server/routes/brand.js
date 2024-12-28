@@ -1,11 +1,12 @@
 const express = require('express');
-const { PrismaClient } = require('@prisma/client');
+// const { PrismaClient } = require('@prisma/client');
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 const router = express.Router();
 
 router.post('/brand-items', async (req, res) => {
   const brandItems = req.body;
+  const prisma = require.prisma;
 
   try {
     const savedItems = await prisma.brandItem.createMany({
