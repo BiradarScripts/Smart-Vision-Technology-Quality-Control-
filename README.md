@@ -41,10 +41,7 @@ Displays analysis outcomes in a basic layout.
 
 ![Analysis Results](https://github.com/user-attachments/assets/d0c86315-108d-416e-a745-c35dfb456334)
 
-### 🤖 AI Chat
-Your personal AI nutritionist.
 
-![AI Chat](https://github.com/user-attachments/assets/f96e606e-7623-46f9-a8ba-7274576312b3)
 
 ### 🔄 Dashboard
 Track what you eat.
